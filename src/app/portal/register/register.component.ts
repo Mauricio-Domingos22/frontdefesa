@@ -19,14 +19,16 @@ export class RegisterComponent {
     id_gender: null,
     id_city: null,
     id_type_user: 1,
-    id_speciality:null
+    id_speciality: null
   }
 
-  salvarFree(){
+  constructor(private http: HttpClient) {
 
   }
-  constructor(http: HttpClient) {
-  //this.htttp('') => res
+
+  salvarFree() {
+    this.http.post('http://127.0.0.1:3333/users', this.userFree)
+      .subscribe(res => { })
   }
 
 
