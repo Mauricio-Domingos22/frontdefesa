@@ -8,52 +8,81 @@
     <form class="row g-3">
         <h5>Criar conta Freelancer</h5>
         <div class="col-md-6">
-            <label for="fullName" class="form-label">Nome completo do CEO</label>
+            <label for="fullName" class="form-label" name="fullName" [(ngModel)]=" userComp.fullname">Nome completo do CEO</label>
             <input type="text" class="form-control" id="fullName" placeholder="Digite o nome de registo">
           </div>
           <div class="col-md-6">
             <label for="numberBI" class="form-label">Número de BI</label>
-            <input type="text" class="form-control" id="numberBI" placeholder="Número de Bilhete de identidade" maxlength="14">
+            <input type="text" class="form-control" name="binumber" [(ngModel)]=" userComp.binumber" placeholder="Número de Bilhete de identidade" maxlength="14">
           </div>
         <div class="col-md-6">
           <label for="phone" class="form-label">Nº de Telefone</label>
-          <input type="text" class="form-control phones" id="phone" placeholder="9XXXXXXXXX" maxlength="9">
+          <input type="text" class="form-control phones" name="phone" [(ngModel)]=" userComp.phone" placeholder="9XXXXXXXXX" maxlength="9">
+        </div>
+        <div class="col-md-6">
+          <label for="userName" class="form-label">Nome do Proprietario</label>
+          <input type="text" class="form-control" name="name_company" [(ngModel)]=" userComp.name_company" placeholder="Coloque o seu primeiro e ultimo nome">
         </div>
         <div class="col-md-6">
           <label for="userName" class="form-label">Nome da Empresa</label>
-          <input type="text" class="form-control" id="userName" placeholder="Coloque o seu primeiro e ultimo nome">
+          <input type="text" class="form-control" name="username" [(ngModel)]=" userComp.username" placeholder="Coloque o seu primeiro e ultimo nome">
         </div>
         <div class="col-md-6">
             <label for="nif" class="form-label">NIF</label>
-            <input type="text" class="form-control" id="nif" placeholder="NIF da empresa" maxlength="10">
+            <input type="text" class="form-control" name="nif" [(ngModel)]=" userComp.nif" placeholder="NIF da empresa" maxlength="10">
           </div>
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Digite o seu email">
+            <input type="email" class="form-control" name="email" (ngModel)]=" userComp.email" placeholder="Digite o seu email">
           </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Digite a sua palavra-passe">
+            <input type="password" class="form-control" name="password" [(ngModel)]=" userComp.password" placeholder="Digite a sua palavra-passe">
           </div>
           <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Confirmar palavra-passe</label>
             <input type="password" class="form-control" id="inputPassword4" placeholder="Digite a sua palavra-passe">
           </div>
+
+          <div class="col-md-3">
+            <label for="inputCity" class="form-label">Província</label>
+            <select [(ngModel)]=" userComp.id_city" name="id_city" class="form-select">
+              <option selected>Selecione</option>
+              <option value="1">Luanda</option>
+              <option value="2">Benguela</option>
+              <option value="3">Cabinda</option>
+              <option value="4">Cunene</option>
+              <option value="5">Huambo</option>
+              <option value="6">Uige</option>
+              <option value="7">Moxico</option>
+              <option value="8">Huila</option>
+              <option value="9">Zaire</option>
+              <option value="10">Luanda Norte</option>
+              <option value="11">Lunda Sul</option>
+              <option value="12">Kuando Kubango</option>
+              <option value="13">Namibe</option>
+              <option value="14">Kwuanza Norte</option>
+              <option value="15">Kwuanza Sul</option>
+              <option value="16">Bié</option>
+              <option value="17">Malanje</option>
+              <option value="18">Bengo</option>
+            </select>
+          </div>
         
         <div class="col-12">
          <label for="">Genero:</label>
           <div class="form-check">
-            <input type="radio" class="form-check-input" name="radiOption" id="radiOption1">
+            <input type="radio" class="form-check-input" name="id_gender" [(ngModel)]="userComp.id_gender">
     <label class="form-check-label" for="radiOption1">Masculino</label>
   </div>
   <div class="form-check">
-    <input type="radio" class="form-check-input" name="radiOption" id="radiOption2">
+    <input type="radio" class="form-check-input" name="id_gender" [(ngModel)]=" userComp.id_gender">
     <label class="form-check-label" for="radiOption2">Feminino</label>
         </div> 
         </div>
     
         <div class="col-12">
-          <button type="submit" class="btn btn-primary btnRegister">Registrar</button>
+          <button type="button" (click)="salvarComp()" class="btn btn-primary btnRegister">Registrar</button>
         </div>
       </form>
 
