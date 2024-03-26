@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BackofficeComponent } from './backoffice/backoffice.component';
 
 const routes: Routes = [
-  {path:'', component:BackofficeComponent}
+  {path:'', component:BackofficeComponent},
+  
 ];
 
 @NgModule({

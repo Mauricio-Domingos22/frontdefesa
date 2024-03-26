@@ -8,36 +8,36 @@
     <form class="row g-3">
         <h5>Criar conta Freelancer</h5>
         <div class="col-md-6">
-            <label for="fullName" class="form-label" name="fullName" [(ngModel)]=" userComp.fullname">Nome completo do CEO</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Digite o nome de registo">
+            <label for="fullName" class="form-label">Nome completo do CEO</label>
+            <input type="text" class="form-control" name="fullName" [(ngModel)]="userComp.fullname" placeholder="Digite o nome de registo">
           </div>
           <div class="col-md-6">
             <label for="numberBI" class="form-label">Número de BI</label>
-            <input type="text" class="form-control" name="binumber" [(ngModel)]=" userComp.binumber" placeholder="Número de Bilhete de identidade" maxlength="14">
+            <input type="text" class="form-control" name="binumber" [(ngModel)]="userComp.binumber" placeholder="Número de Bilhete de identidade" maxlength="14">
           </div>
         <div class="col-md-6">
           <label for="phone" class="form-label">Nº de Telefone</label>
-          <input type="text" class="form-control phones" name="phone" [(ngModel)]=" userComp.phone" placeholder="9XXXXXXXXX" maxlength="9">
+          <input type="text" class="form-control phones" name="phone" [(ngModel)]="userComp.phone" placeholder="9XXXXXXXXX" maxlength="9">
         </div>
         <div class="col-md-6">
           <label for="userName" class="form-label">Nome do Proprietario</label>
-          <input type="text" class="form-control" name="name_company" [(ngModel)]=" userComp.name_company" placeholder="Coloque o seu primeiro e ultimo nome">
+          <input type="text" class="form-control" name="name_company" [(ngModel)]="userComp.name_company" placeholder="Coloque o seu primeiro e ultimo nome">
         </div>
         <div class="col-md-6">
           <label for="userName" class="form-label">Nome da Empresa</label>
-          <input type="text" class="form-control" name="username" [(ngModel)]=" userComp.username" placeholder="Coloque o seu primeiro e ultimo nome">
+          <input type="text" class="form-control" name="username" [(ngModel)]="userComp.username" placeholder="Coloque o seu primeiro e ultimo nome">
         </div>
         <div class="col-md-6">
             <label for="nif" class="form-label">NIF</label>
-            <input type="text" class="form-control" name="nif" [(ngModel)]=" userComp.nif" placeholder="NIF da empresa" maxlength="10">
+            <input type="text" class="form-control" name="nif" [(ngModel)]="userComp.nif" placeholder="NIF da empresa" maxlength="10">
           </div>
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" name="email" (ngModel)]=" userComp.email" placeholder="Digite o seu email">
+            <input type="email" class="form-control" name="email" [(ngModel)]="userComp.email" placeholder="Digite o seu email">
           </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" name="password" [(ngModel)]=" userComp.password" placeholder="Digite a sua palavra-passe">
+            <input type="password" class="form-control" name="password" [(ngModel)]="userComp.password" placeholder="Digite a sua palavra-passe">
           </div>
           <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Confirmar palavra-passe</label>
@@ -46,7 +46,7 @@
 
           <div class="col-md-3">
             <label for="inputCity" class="form-label">Província</label>
-            <select [(ngModel)]=" userComp.id_city" name="id_city" class="form-select">
+            <select [(ngModel)]="userComp.id_city" name="id_city" class="form-select">
               <option selected>Selecione</option>
               <option value="1">Luanda</option>
               <option value="2">Benguela</option>
@@ -72,11 +72,11 @@
         <div class="col-12">
          <label for="">Genero:</label>
           <div class="form-check">
-            <input type="radio" class="form-check-input" name="id_gender" [(ngModel)]="userComp.id_gender">
+            <input type="radio" class="form-check-input" value="1" name="radiOption1" [(ngModel)]="userComp.id_gender">
     <label class="form-check-label" for="radiOption1">Masculino</label>
   </div>
   <div class="form-check">
-    <input type="radio" class="form-check-input" name="id_gender" [(ngModel)]="userComp.id_gender">
+    <input type="radio" class="form-check-input" value="2" name="radiOption2" [(ngModel)]="userComp.id_gender">
     <label class="form-check-label" for="radiOption2">Feminino</label>
         </div> 
         </div>

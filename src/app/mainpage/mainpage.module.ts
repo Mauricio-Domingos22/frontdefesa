@@ -5,6 +5,9 @@ import { MainpageRoutingModule } from './mainpage-routing.module';
 
 import { HeadertwoComponent } from './headertwo/headertwo.component';
 import { BackofficeComponent } from './backoffice/backoffice.component';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
+
 
 
 @NgModule({
@@ -15,7 +18,9 @@ import { BackofficeComponent } from './backoffice/backoffice.component';
   ],
   imports: [
     CommonModule,
-    MainpageRoutingModule
+    MainpageRoutingModule,
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class MainpageModule { }

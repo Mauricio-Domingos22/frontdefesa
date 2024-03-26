@@ -12,16 +12,16 @@
         <form action="">
             <label for="email">Email</label>
             <div class="custome-input">
-                <input type="email" name="email" placeholder="Digite o seu email" >
+                <input type="email" name="email" [(ngModel)]="login.email"placeholder="Digite o seu email" >
                 <i class='bx bx-at'></i>
             </div>
 
             <label for="password">Palavra-Passe</label>
             <div class="custome-input">
-                <input type="password" name="password" placeholder="Digite a sua palavra passe" >
+                <input type="password" name="password" [(ngModel)]="login.password" placeholder="Digite a sua palavra passe" >
                 <i class='bx bx-lock-alt'></i>
             </div>
-            <button class="login">Iniciar sessão</button>
+            <button class="login" (click)="entrar()" >Iniciar sessão</button>
 
             <div class="divider">
                 <div class="line"></div>
@@ -37,7 +37,7 @@
                </div>
 
             <div class="links">
-                <a href="#">Recuperar palavra-passe</a>
+                <!--<a href="#">Recuperar palavra-passe</a>-->
                 <a href="#">Registar-se agora</a>
             </div>
         </form>

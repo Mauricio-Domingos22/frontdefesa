@@ -23,26 +23,32 @@
          
         <div class="public">
         <form action="">
+
             <div class="form-group">
-              <textarea name="message" id="message" required="required" class="form-control" rows="5"
+                <input type="time" name="subject" [(ngModel)]="publication.subject" placeholder=" Titulo do servico" >
+            </div>
+            <div class="form-group">
+              <textarea name="message" [(ngModel)]="publication.body" class="form-control" rows="5"
               placeholder="Publique o Serviço aqui..."></textarea>
             </div>
             <div class="form-group">
-              <select name="" id="position">
+              <select >
                 <option value="1">Designer</option>
                 <option value="2">Programador</option>
                 <option value="3">Arquiteto</option>
               </select>
 
-              <select name="" id="position">
+              <select name="id_speciality" [(ngModel)]="publication.id_speciality">
                 <option value="1">Gráfico</option>
                 <option value="2">UX/UI</option>
                 <option value="3">Mídias</option>
               </select>
             
-              <input type="button" value="Publicar">
+              <input type="button" (click)="publicar()" value="Publicar">
             </div>
             </form>
+
+
         </div>
          <div class="infoGroup">
         <div class="aditionalInfo"><i class='bx bx-dollar-circle'></i>
