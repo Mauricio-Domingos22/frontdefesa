@@ -11,35 +11,35 @@
         <h5>Criar conta Freelancer</h5>
         <div class="col-md-6">
             <label for="fullName" class="form-label">Nome completo</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Digite o nome de registo">
+            <input type="text" class="form-control" name="fullName" [(ngModel)]="userFree.fullname" placeholder="Digite o nome de registo">
           </div>
           <div class="col-md-6">
             <label for="numberBI" class="form-label">Número de BI</label>
-            <input type="text" class="form-control" id="numberBI" placeholder="Número de Bilhete de identidade" maxlength="14">
+            <input type="text" class="form-control" [(ngModel)]="userFree.binumber" placeholder="Número de Bilhete de identidade" maxlength="14">
           </div>
         <div class="col-md-6">
           <label for="phone" class="form-label">Nº de Telefone</label>
-          <input type="text" class="form-control phones" id="phone" placeholder="9XXXXXXXXX" maxlength="9">
+          <input type="text" class="form-control phones" [(ngModel)]="userFree.phone" placeholder="9XXXXXXXXX" maxlength="9">
         </div>
         <div class="col-md-6">
           <label for="userName" class="form-label">Nome de Usuário</label>
-          <input type="text" class="form-control" id="userName" placeholder="Coloque o seu primeiro e ultimo nome">
+          <input type="text" class="form-control" [(ngModel)]="userFree.username" placeholder="Coloque o seu primeiro e ultimo nome">
         </div>
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Digite o seu email">
+            <input type="email" class="form-control" [(ngModel)]="userFree.email" placeholder="Digite o seu email">
           </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Digite a sua palavra-passe">
+            <input type="password" class="form-control" [(ngModel)]="userFree.password" placeholder="Digite a sua palavra-passe">
           </div>
           <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Confirmar palavra-passe</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Digite a sua palavra-passe">
+            <input type="password" class="form-control"  placeholder="Digite a sua palavra-passe">
           </div>
         <div class="col-md-3">
           <label for="inputCity" class="form-label">Província</label>
-          <select id="inputCity" class="form-select">
+          <select [(ngModel)]="userFree.id_city" class="form-select">
             <option selected>Selecione</option>
             <option value="1">Luanda</option>
             <option value="2">Benguela</option>
@@ -63,7 +63,7 @@
         </div>
         <div class="col-md-3">
             <label for="inputProfi" class="form-label">Profissão</label>
-            <select id="inputProfi" class="form-select">
+            <select [(ngModel)]="userFree.id_speciality" class="form-select">
               <option selected>Selecione</option>
               <option value="1">Designer</option>
               <option value="2">Programador</option>
@@ -77,7 +77,7 @@
           </div>
           <div class="col-md-3">
             <label for="inputEsp" class="form-label">Especialidade</label>
-            <select id="inputEsp" class="form-select">
+            <select  class="form-select">
               <option selected>Selecione</option>
               <option value="1">Designer Gráfico</option>
               <option value="2">Mídia Designer</option>
@@ -88,17 +88,17 @@
         <div class="col-12">
          <label for="">Genero:</label>
           <div class="form-check">
-            <input type="radio" class="form-check-input" name="radiOption" id="radiOption1">
+            <input type="radio" class="form-check-input" value="1" name="radiOption" [(ngModel)]="userFree.id_gender">
     <label class="form-check-label" for="radiOption1">Masculino</label>
   </div>
   <div class="form-check">
-    <input type="radio" class="form-check-input" name="radiOption" id="radiOption2">
-    <label class="form-check-label" for="radiOption2">Feminino</label>
+    <input type="radio" class="form-check-input" value="2" name="radiOption" [(ngModel)]="userFree.id_gender">
+    <label class="form-check-label"  for="radiOption2">Feminino</label>
         </div> 
         </div>
     
         <div class="col-12">
-          <button type="submit" class="btn btn-primary btnRegister">Registrar</button>
+          <button type="button" (click)="salvarFree()" class="btn btn-primary btnRegister">Registrar</button>
         </div>
       </form>
 

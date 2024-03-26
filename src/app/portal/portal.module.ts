@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterCompanyComponent } from './register-company/register-company.component';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     CommonModule,
-    PortalRoutingModule
+    FormsModule,
+    PortalRoutingModule,
+    HttpClientModule
   ]
 })
 export class PortalModule { }
