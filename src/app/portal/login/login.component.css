@@ -1,0 +1,208 @@
+.arealogin {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+.container{
+    width: 440px;
+    padding: 40px 32px;
+    border-radius: 5px;
+    border:1px solid rgba(0,0,0,.2) ;
+    background: #fff;
+}
+.container h1{
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 800;
+    color: #1976D2;
+}
+.container form .social-login{
+    margin-top: 5px;
+    gap: 16;
+    display: flex;
+}
+.container form .social-login button{
+   padding: 8px;
+   width: 100%;
+   border-radius: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+   font-size: 0.90rem;
+   font-weight: 400;
+   color: rgba(0,0,0,0.6);
+   border: 1px solid rgba(0,0,0,.2) ;
+   background: transparent;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+.container form .social-login button i{
+    font-size: 26px;
+}
+
+.container form .social-login button:hover{
+   color: var(--primary);
+   border-color: var(--primary);
+}
+.container form .divider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.container .divider .line{
+    height: 1px;
+    width: 100%;
+    background: #1d1d1d;
+    opacity: 0.2;
+    margin: 20px 0 16px;
+}
+
+.container form label{
+    color: rgba(0,0,0,0.5);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.03rem;
+    display: block;
+    margin-top: 20px;
+}
+.container form .custome-input{
+    position: relative;
+}
+.container form .custome-input input{
+    color: #1d1d1d;
+    font-size: 14px;
+    font-weight: 300;
+    width: 100%;
+    height: 46px;
+    letter-spacing: 0.03rem;
+    border:1px solid rgba(0,0,0,.2) ;
+    background: transparent;
+    border-radius: 5px;
+    text-indent: 15px;
+    margin-top: 6px;
+    transition: all 0.3s ease;
+    outline: none;
+
+}
+.container form .custome-input input:focus{
+    border-bottom-width:2px;
+}
+
+.container form .custome-input i{
+    position: absolute;
+    font-size: 23px;
+    right: 10px;
+    top: 14px;
+    transition: all 0.3s ease;
+    color:rgba(0,0,0,0.6);
+}
+
+.container form .custome-input input:focus + i{
+    color: var(--primary);
+}
+.login{
+    margin-top: 30px;
+    background-color:#1976D2;
+    color: #fff;
+    border: none;
+    width: 100%;
+    line-height: 46px;
+    font-size: 16px;
+    letter-spacing: 0.025;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.login:hover{
+    background-color: rgb(0, 69, 219);
+}
+
+.container .links{
+display: flex;
+justify-content: space-between;
+margin-top: 30px;
+
+}
+.container .links a {
+    color: #2586e7;
+    font-size: 0.80rem;
+    text-decoration: none;
+    text-underline-offset: 4px;
+}
+.container .links a:hover{
+    /* text-decoration: underline; */
+    color: rgb(0, 69, 219);
+}
+
+
+@media screen and (max-width: 768px) {
+    .sidebar{
+        width: 200px;
+    }
+
+    .content{
+        width: calc(100% - 60px);
+        left: 200px;
+    }
+    .content main .contact-formulario{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    
+    .content nav form .form-input input{
+        display: none;
+    }
+
+    .content nav form .form-input button{
+        width: auto;
+        height: auto;
+        background: transparent;
+        color: var(--dark);
+        border-radius: none;
+    }
+
+    .content nav form.show .form-input input{
+        display: block;
+        width: 100%;
+    }
+
+    .content nav form.show .form-input button{
+        width: 36px;
+        height: 100%;
+        color: var(--light);
+        background: var(--danger);
+        border-radius: 0 5px 5px 0;
+    }
+
+    .content nav form.show~.notif, .content nav form.show~.profile{
+        display: none;
+    }
+
+    .content main .insights {
+        grid-template-columns: 1fr;
+    }
+
+    .content main .bottom-data .header{
+        min-width: 340px;
+    }
+
+    .content main .bottom-data .orders table{
+        min-width: 340px;
+    }
+
+    .content main .bottom-data .reminders .task-list{
+        min-width: 340px;
+    }
+    .content main .contact-formulario{
+        width: 100%;
+    }
+
+}

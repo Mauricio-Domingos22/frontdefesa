@@ -1,0 +1,106 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> 
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+</head>
+
+<app-header></app-header>
+
+
+<div class="areaRegister container">
+    <form class="row g-3">
+        <h5>Criar conta Freelancer</h5>
+        <div class="col-md-6">
+            <label for="fullName" class="form-label">Nome completo</label>
+            <input type="text" class="form-control" id="fullName" placeholder="Digite o nome de registo">
+          </div>
+          <div class="col-md-6">
+            <label for="numberBI" class="form-label">Número de BI</label>
+            <input type="text" class="form-control" id="numberBI" placeholder="Número de Bilhete de identidade" maxlength="14">
+          </div>
+        <div class="col-md-6">
+          <label for="phone" class="form-label">Nº de Telefone</label>
+          <input type="text" class="form-control phones" id="phone" placeholder="9XXXXXXXXX" maxlength="9">
+        </div>
+        <div class="col-md-6">
+          <label for="userName" class="form-label">Nome de Usuário</label>
+          <input type="text" class="form-control" id="userName" placeholder="Coloque o seu primeiro e ultimo nome">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Digite o seu email">
+          </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Digite a sua palavra-passe">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Confirmar palavra-passe</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Digite a sua palavra-passe">
+          </div>
+        <div class="col-md-3">
+          <label for="inputCity" class="form-label">Província</label>
+          <select id="inputCity" class="form-select">
+            <option selected>Selecione</option>
+            <option value="1">Luanda</option>
+            <option value="2">Benguela</option>
+            <option value="3">Cabinda</option>
+            <option value="4">Cunene</option>
+            <option value="5">Huambo</option>
+            <option value="6">Uige</option>
+            <option value="7">Moxico</option>
+            <option value="8">Huila</option>
+            <option value="9">Zaire</option>
+            <option value="10">Luanda Norte</option>
+            <option value="11">Lunda Sul</option>
+            <option value="12">Kuando Kubango</option>
+            <option value="13">Namibe</option>
+            <option value="14">Kwuanza Norte</option>
+            <option value="15">Kwuanza Sul</option>
+            <option value="16">Bié</option>
+            <option value="17">Malanje</option>
+            <option value="18">Bengo</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+            <label for="inputProfi" class="form-label">Profissão</label>
+            <select id="inputProfi" class="form-select">
+              <option selected>Selecione</option>
+              <option value="1">Designer</option>
+              <option value="2">Programador</option>
+              <option value="3">Fotógrafo</option>
+              <option value="4">Marketing e Vendas</option>
+              <option value="5">Produtor de conteúdo</option>
+              <option value="6">Revizor de conteúdo</option>
+              <option value="7">Administrativo</option>
+              <option value="8">Tradutor</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="inputEsp" class="form-label">Especialidade</label>
+            <select id="inputEsp" class="form-select">
+              <option selected>Selecione</option>
+              <option value="1">Designer Gráfico</option>
+              <option value="2">Mídia Designer</option>
+              <option value="3">UX/UI Designer</option>
+              <option value="4">Motion Designer</option>
+            </select>
+          </div>
+        <div class="col-12">
+         <label for="">Genero:</label>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="radiOption" id="radiOption1">
+    <label class="form-check-label" for="radiOption1">Masculino</label>
+  </div>
+  <div class="form-check">
+    <input type="radio" class="form-check-input" name="radiOption" id="radiOption2">
+    <label class="form-check-label" for="radiOption2">Feminino</label>
+        </div> 
+        </div>
+    
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary btnRegister">Registrar</button>
+        </div>
+      </form>
+
+</div>
+

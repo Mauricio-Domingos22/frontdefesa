@@ -1,0 +1,102 @@
+#nif{
+    width: 38% !important;
+  }
+  
+  .form-control:focus{
+  
+      outline: none !important;
+      box-shadow: none !important;
+  
+  }
+  
+  .form-select:focus{
+    box-shadow: none !important;
+    outline: none !important;
+    border:1px solid rgba(0,0,0,.2) !important;
+  }
+  .form-check-input:focus{
+    box-shadow: none !important;
+    outline: none !important;
+  
+  }
+  .form-check .form-check-label{
+    color: rgba(0,0,0,0.5) !important;
+    font-size: 14px !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.03rem !important;
+  }
+  
+  
+   @media screen and (max-width: 1200px){
+    
+  
+         /* Register */
+         .areaRegister{
+          width: 640px;
+        }
+   }
+  
+  @media screen and (max-width: 768px) {
+     .registerButton{
+         background-color: transparent !important;
+         color: #fff !important;
+         padding-left: 5px;
+     }
+     .navbar-brand{
+  
+         margin-right: 100px !important;
+     }
+     header, .sell-nft{
+        padding: 0 20px;
+     }
+     header .left h1{
+        font-size: 24px;
+      }
+      header .left p{
+        font-size: 14px;
+      }
+      header .left a{
+        padding: 6px;
+        width: 166px;
+        font-size: 12px;
+      }
+      header .left a i{
+        padding-left: 5px;
+        
+      }
+      
+  }
+  
+  @media screen and (max-width: 576px){
+     
+      /* Register */
+      .areaRegister{
+        width: 440px;
+      }
+      .btnRegister{
+        width: 100% !important;
+      }
+      
+  }
+  @media screen and (max-width: 425px){
+    .areaRegister{
+      width: 410px;
+      border: none !important;
+    }
+    @media screen and (max-width: 375px){
+      .areaRegister{
+        width: 360px;
+        border: none !important;
+      } 
+    }
+  }
+  @media screen and (max-width: 320px){
+       /* Register */
+      .areaRegister{
+        width: 310px;
+        border: none !important;
+      }
+      #phone{
+        width: 47% !important;
+      } 
+  }
