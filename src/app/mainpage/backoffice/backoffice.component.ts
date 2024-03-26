@@ -12,20 +12,24 @@ export class BackofficeComponent {
     empresa: null,
     subject: null,
     body: null,
-    date_publication:null,
+    date_publication: null,
     id_speciality: null
   }
 
   constructor(
     private http: HttpClient
-    
-    ) {
+
+  ) {
 
   }
 
   publicar() {
-    this.http.post('http://127.0.0.1:3333/users', this.publication)
-      .subscribe(res => { })
+    this.http.post('http://127.0.0.1:3333/publication', this.publication)
+      .subscribe(res => {
+        if (Object(res).code == 200) {
+          alert(Object(res).message)
+        }
+      })
   }
 
 }
