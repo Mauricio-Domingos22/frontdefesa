@@ -4,7 +4,7 @@ import { BackofficeComponent } from './backoffice/backoffice.component';
 import { FreeofficeComponent } from './freeoffice/freeoffice.component';
 
 const routes: Routes = [
-  {path:'', component:BackofficeComponent},
+  {path:'empresa_trabalho', component:BackofficeComponent},
   {path:'freelance_trabalho', component:FreeofficeComponent}
 
 ];
