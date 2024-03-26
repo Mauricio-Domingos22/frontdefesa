@@ -6,7 +6,8 @@ import { MainpageRoutingModule } from './mainpage-routing.module';
 import { HeadertwoComponent } from './headertwo/headertwo.component';
 import { BackofficeComponent } from './backoffice/backoffice.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { FreeofficeComponent } from './freeoffice/freeoffice.component'
 
 
 
@@ -14,7 +15,8 @@ import {HttpClientModule} from '@angular/common/http'
   declarations: [
    
     HeadertwoComponent,
-    BackofficeComponent
+    BackofficeComponent,
+    FreeofficeComponent
   ],
   imports: [
     CommonModule,
