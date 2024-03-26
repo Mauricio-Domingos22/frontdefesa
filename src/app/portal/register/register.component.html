@@ -15,23 +15,23 @@
           </div>
           <div class="col-md-6">
             <label for="numberBI" class="form-label">Número de BI</label>
-            <input type="text" class="form-control" [(ngModel)]="userFree.binumber" placeholder="Número de Bilhete de identidade" maxlength="14">
+            <input type="text" class="form-control" [(ngModel)]="userFree.binumber" name="binumber" placeholder="Número de Bilhete de identidade" maxlength="14">
           </div>
         <div class="col-md-6">
           <label for="phone" class="form-label">Nº de Telefone</label>
-          <input type="text" class="form-control phones" [(ngModel)]="userFree.phone" placeholder="9XXXXXXXXX" maxlength="9">
+          <input type="text" class="form-control phones" [(ngModel)]="userFree.phone" name="phone" placeholder="9XXXXXXXXX" maxlength="9">
         </div>
         <div class="col-md-6">
           <label for="userName" class="form-label">Nome de Usuário</label>
-          <input type="text" class="form-control" [(ngModel)]="userFree.username" placeholder="Coloque o seu primeiro e ultimo nome">
+          <input type="text" class="form-control" [(ngModel)]="userFree.username" name="username" placeholder="Coloque o seu primeiro e ultimo nome">
         </div>
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" [(ngModel)]="userFree.email" placeholder="Digite o seu email">
+            <input type="email" class="form-control" [(ngModel)]="userFree.email" name="email" placeholder="Digite o seu email">
           </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" [(ngModel)]="userFree.password" placeholder="Digite a sua palavra-passe">
+            <input type="password" class="form-control" [(ngModel)]="userFree.password" name="password" placeholder="Digite a sua palavra-passe">
           </div>
           <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Confirmar palavra-passe</label>
@@ -39,7 +39,7 @@
           </div>
         <div class="col-md-3">
           <label for="inputCity" class="form-label">Província</label>
-          <select [(ngModel)]="userFree.id_city" class="form-select">
+          <select [(ngModel)]="userFree.id_city" name="id_city" class="form-select">
             <option selected>Selecione</option>
             <option value="1">Luanda</option>
             <option value="2">Benguela</option>
@@ -63,7 +63,7 @@
         </div>
         <div class="col-md-3">
             <label for="inputProfi" class="form-label">Profissão</label>
-            <select [(ngModel)]="userFree.id_speciality" class="form-select">
+            <select [(ngModel)]="userFree.id_speciality" name="id_speciality" class="form-select">
               <option selected>Selecione</option>
               <option value="1">Designer</option>
               <option value="2">Programador</option>
