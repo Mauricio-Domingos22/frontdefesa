@@ -14,6 +14,10 @@ export class LoginComponent {
     password: null
   }
 
+  isLoggedIn: boolean = sessionStorage.getItem('sessionToken') ? true : false
+
+  private userLogged = false
+
   private navigateByUrl: any;
 
   constructor(
@@ -27,9 +31,16 @@ export class LoginComponent {
 
         console.log(res)
 
-        if (Object(res).user.type_user == "Freelancer") {
+        const data = Object(res)
+
+        if (data.user.type_user == "Freelancer") {
 
           this.navigateByUrl = 'freelance_trabalho'
+
+          sessionStorage.setItem('sessionToken', data.token.token)
+          sessionStorage.setItem('currentUser', JSON.stringify(data.user));
+
+          this.userLogged = true
 
           this.router.navigateByUrl(`/area_de_trabalho/${this.navigateByUrl}`)
 
@@ -37,6 +48,11 @@ export class LoginComponent {
         } else {
 
           this.navigateByUrl = 'empresa_trabalho'
+
+          sessionStorage.setItem('sessionToken', data.token.token)
+          sessionStorage.setItem('currentUser', JSON.stringify(data.user));
+
+          this.userLogged = true
 
           this.router.navigateByUrl(`/area_de_trabalho/${this.navigateByUrl}`)
           alert('Seja Bem-Vindo')
