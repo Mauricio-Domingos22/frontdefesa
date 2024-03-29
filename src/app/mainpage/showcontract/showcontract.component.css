@@ -1,0 +1,31 @@
+body{
+    background: var(--grey);
+    overflow-x: hidden;
+}
+
+.viewAll{
+    width: 70%;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-right: 100px;
+    border:1px solid rgba(0,0,0,.1) ;
+    border-radius: 5px;
+    padding: 20px;
+    background: #fff;
+    margin-top: 20px;
+    margin-bottom: 150px;
+    font-size: 13px;
+    
+}
+table{
+    width: 100%;
+}
+.modal-title{
+    font-weight: 800 !important;
+    color:#1976D2 !important; 
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: 160px !important;
+}

@@ -10,7 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { FreeofficeComponent } from './freeoffice/freeoffice.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PublicationsComponent } from './publications/publications.component';
-import { ContractComponent } from './contract/contract.component'
+import { ContractComponent } from './contract/contract.component';
+import { ShowcontractComponent } from './showcontract/showcontract.component'
 
 
 
@@ -22,7 +23,8 @@ import { ContractComponent } from './contract/contract.component'
     FreeofficeComponent,
     PerfilComponent,
     PublicationsComponent,
-    ContractComponent
+    ContractComponent,
+    ShowcontractComponent
   ],
   imports: [
     CommonModule,

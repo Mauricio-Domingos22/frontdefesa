@@ -12,16 +12,16 @@
                 <form class="row g-3">
                     <h5>Contrato de prestaçao de serviço</h5>
                     <div class="col-md-12">
-                        <textarea name="message" class="form-control" rows="5"
+                        <textarea name="description" [(ngModel)]="contract.description" class="form-control" rows="5"
                         placeholder="Descreva o Serviço aqui..."></textarea>
                       </div>
                     <div class="col-md-3">
                       <label for="phone" class="form-label">valor do serviço</label>
-                      <input type="text" class="form-control" id="phone" name="phone" placeholder="0000000,00">
+                      <input type="text" class="form-control" id="phone" name="value" [(ngModel)]="contract.value" placeholder="0000000.00">
                     </div>
                     <div class="col-md-3">
                       <label for="userName" class="form-label">Data de entrega</label>
-                      <input type="text" class="form-control"  name="username" placeholder="AAAA-MM-DD">
+                      <input type="date" class="form-control" name="term" [(ngModel)]="contract.term" placeholder="AAAA-MM-DD">
                     </div>
                     <div class="numeroprototipo">
                         <div class="numero">
@@ -29,7 +29,7 @@
                         <label class="form-label">Número de Protótipo</label>
                     </div>
                     <div>
-                        <input id="prot" type="number">
+                        <input id="prot" name="number_prototype" [(ngModel)]="contract.number_prototype" type="number">
                     </div>
                     </div>
                       </div>
@@ -42,6 +42,8 @@
                     <div class="col-6">
                         <button type="button"  class="btn btn-primary btnRegister">Assinar o contarto</button>
                       </div>
+
+                      <input type="button" (click)="efectuar()" value="Efectuado">
 
                  <!-- <div class="data">
                     <p>Data:</p>

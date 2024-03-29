@@ -4,12 +4,14 @@ import { BackofficeComponent } from './backoffice/backoffice.component';
 import { FreeofficeComponent } from './freeoffice/freeoffice.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ContractComponent } from './contract/contract.component';
+import { ShowcontractComponent } from './showcontract/showcontract.component';
 
 const routes: Routes = [
   {path:'empresa_trabalho', component:BackofficeComponent},
   {path:'freelance_trabalho', component:FreeofficeComponent},
   {path:'perfil_usuario', component:PerfilComponent},
-  {path:'contrato', component:ContractComponent}
+  {path:'contrato', component:ContractComponent},
+  {path:'vercontrato', component:ShowcontractComponent}
 
 ];
 
