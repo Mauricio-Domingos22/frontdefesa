@@ -3,12 +3,20 @@ import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
+interface Profissao {
+  id: number;
+  description: string;
+}
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  profissaoSelecionada: Profissao | null = null;
+  
+  profissoes: Profissao[] = [];
 
   userFree = {
     fullname: null,
@@ -24,8 +32,17 @@ export class RegisterComponent {
   }
 
   constructor(private http: HttpClient,private router:Router) {
+    this.getProfissoes()
 
   }
+  getProfissoes() {
+    this.http.get<any>('http://127.0.0.1:3333/profissao')
+      .subscribe(res => {
+        this.profissoes = res.profissions;
+        console.log('Dados recebidos:', this.profissoes);
+      });
+  }
+
 
   salvarFree() {
     this.http.post('http://127.0.0.1:3333/users', this.userFree)
