@@ -38,7 +38,7 @@ export class RegisterComponent {
   getProfissoes() {
     this.http.get<any>('http://127.0.0.1:3333/profissao')
       .subscribe(res => {
-        this.profissoes = res.profissions;
+        this.profissoes = res.profition;
         console.log('Dados recebidos:', this.profissoes);
       });
   }
