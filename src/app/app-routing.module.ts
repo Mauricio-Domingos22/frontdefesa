@@ -10,7 +10,9 @@ const routes: Routes = [
   {
     path: 'area_de_trabalho',
     loadChildren: () => import('./mainpage/mainpage.module').then(m => m.MainpageModule)
-  }
+  },
+  {path:'', redirectTo:'/portal', pathMatch:'full'},
+  {path:'**', redirectTo:'/portal', pathMatch:'full'},
 ];
 
 @NgModule({

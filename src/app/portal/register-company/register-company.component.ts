@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-company',
@@ -22,13 +23,16 @@ export class RegisterCompanyComponent {
     nif:null
   }
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router:Router) {
 
   }
 
   salvarComp() {
     this.http.post('http://127.0.0.1:3333/users', this.userComp)
-      .subscribe(res => { })
+      .subscribe(res => { 
+        alert('Castrado com sucesso');
+        this.router.navigate(['/portal/login'])
+      })
   }
 
 

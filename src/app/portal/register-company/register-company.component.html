@@ -6,7 +6,7 @@
 
 <div class="areaRegister container">
     <form class="row g-3">
-        <h5>Criar conta Freelancer</h5>
+        <h5>Criar conta de Empresa</h5>
         <div class="col-md-6">
             <label for="fullName" class="form-label">Nome completo do CEO</label>
             <input type="text" class="form-control" name="fullName" [(ngModel)]="userComp.fullname" placeholder="Digite o nome de registo">
@@ -17,7 +17,7 @@
           </div>
         <div class="col-md-6">
           <label for="phone" class="form-label">Nº de Telefone</label>
-          <input type="text" class="form-control phones" name="phone" [(ngModel)]="userComp.phone" placeholder="9XXXXXXXXX" maxlength="9">
+          <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="userComp.phone" placeholder="9XXXXXXXXX" maxlength="9">
         </div>
         <div class="col-md-6">
           <label for="userName" class="form-label">Nome do Proprietario</label>

@@ -7,7 +7,10 @@ import { HeadertwoComponent } from './headertwo/headertwo.component';
 import { BackofficeComponent } from './backoffice/backoffice.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { FreeofficeComponent } from './freeoffice/freeoffice.component'
+import { FreeofficeComponent } from './freeoffice/freeoffice.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { PublicationsComponent } from './publications/publications.component';
+import { ContractComponent } from './contract/contract.component'
 
 
 
@@ -16,7 +19,10 @@ import { FreeofficeComponent } from './freeoffice/freeoffice.component'
    
     HeadertwoComponent,
     BackofficeComponent,
-    FreeofficeComponent
+    FreeofficeComponent,
+    PerfilComponent,
+    PublicationsComponent,
+    ContractComponent
   ],
   imports: [
     CommonModule,

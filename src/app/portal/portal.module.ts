@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 
 
+
 @NgModule({
   declarations: [
     PortalComponent,
@@ -23,7 +24,8 @@ import {HttpClientModule} from '@angular/common/http'
     CommonModule,
     FormsModule,
     PortalRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+ 
   ]
 })
 export class PortalModule { }

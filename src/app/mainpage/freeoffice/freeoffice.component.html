@@ -3,24 +3,21 @@
 </head>
 <app-headertwo></app-headertwo>
 
-<body>
+
     <body>
         <div class="content">
         <main>   
 
 
-<div class="card container">
-    <h5 class="card-header">Featured</h5>
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti asperiores harum iusto
-         et itaque consequuntur, magni error veritatis fuga earum esse quae, fugiat commodi distinctio 
-         obcaecati sequi at inventore ipsum.
-      </p>
-      <a href="#" class="btn btn-primary">Submeter</a>
-    </div>
-  </div>
+          <div class="card container" *ngFor="let item of publications">
+            <h5 class="card-header">{{ item.subject }}</h5>
+            <div class="card-body">
+              <h5 class="card-title">#</h5>
+              <p class="card-text">{{ item.body }}</p>
+              <input type="button" class="btn btn-primary" (click)="submeter()" value="Submeter Portifólio">
+              <!-- <a href="#" class="btn btn-primary">Submeter</a> -->
+            </div>
+          </div>
         </main>
         </div>
 </body>

@@ -24,14 +24,14 @@
         <div class="public">
         <form action="">
 
-            <div class="form-group">
+            <div class="form-title">
                 <input type="text" name="subject" [(ngModel)]="publication.subject" placeholder=" Titulo do servico" >
             </div>
             <div class="form-group">
               <textarea name="message" [(ngModel)]="publication.body" class="form-control" rows="5"
-              placeholder="Publique o Serviço aqui..."></textarea>
+              placeholder="Descreva o Serviço aqui..."></textarea>
             </div>
-            <div class="form-group">
+            <div class="publicService">
               <select >
                 <option value="1">Designer</option>
                 <option value="2">Programador</option>
@@ -50,23 +50,11 @@
 
 
         </div>
-         <div class="infoGroup">
-        <div class="aditionalInfo"><i class='bx bx-dollar-circle'></i>
-            <span class="info">
-                <h4>
-                6,742 kz
-                </h4>
-                <p>Saldo</p>
-            </span>
-        </div>
-        <div class="aditionalInfo"><i class='bx bx-show-alt'></i>
-            <span class="info">
-                <h4>
-                    3
-                </h4>
-                <p>Denuncia</p>
-            </span>
-        </div>  
+         <div class="aditional">
+         <a href="#" class="report">
+            <span>Minhas Publibacoes</span>
+        </a>
+        
     </div>
     </div>
    
@@ -123,7 +111,6 @@
             <div class="header">
                 <i class='bx bx-note'></i>
                 <h3>Contratos Efectuados</h3>
-                <i class='bx bx-filter'></i>
                
             </div>
             <ul class="task-list">
