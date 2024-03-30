@@ -63,21 +63,20 @@
         </div>
         <div class="col-md-3">
             <label for="inputProfi" class="form-label">Profissão</label>
-            <select [(ngModel)]="profissaoSelecionada" name="profissaoSelecionada" class="form-select">
+            <select [(ngModel)]="profissaoSelecionada" name="profissaoSelecionada" (change)="getSpecialtiesByProfession()"class="form-select">
               <option selected>Selecione</option>
           <option *ngFor="let profissao of profissoes" [ngValue]="profissao">{{ profissao.description }}</option>
             </select>
           </div>
           <div class="col-md-3">
             <label for="inputEsp" class="form-label">Especialidade</label>
-            <select [(ngModel)]="userFree.id_speciality" name="id_speciality" class="form-select">
-              <option selected>Selecione</option>
-              <option value="1">Designer Gráfico</option>
-              <option value="2">Mídia Designer</option>
-              <option value="3">UX/UI Designer</option>
-              <option value="4">Motion Designer</option>
+            <select id="specialtySelect" [(ngModel)]="selectedSpecialty" class="form-select">
+              <option value="" selected>Selecione</option>
+              <option *ngFor="let specialty of specialties" [value]="specialty.id">{{ specialty.description }}</option>
             </select>
           </div>
+          
+          
         <div class="col-12">
          <label for="">Genero:</label>
           <div class="form-check">

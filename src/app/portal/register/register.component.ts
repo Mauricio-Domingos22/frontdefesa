@@ -7,6 +7,10 @@ interface Profissao {
   id: number;
   description: string;
 }
+interface Especialidade {
+  id: number;
+  description: string;
+}
 
 @Component({
   selector: 'app-register',
@@ -17,6 +21,9 @@ export class RegisterComponent {
   profissaoSelecionada: Profissao | null = null;
   
   profissoes: Profissao[] = [];
+  specialties: Especialidade[] = [];
+  selectedProfession: number | null = null;
+  selectedSpecialty: number | null = null;
 
   userFree = {
     fullname: null,
@@ -28,7 +35,7 @@ export class RegisterComponent {
     id_gender: null,
     id_city: null,
     id_type_user: 1,
-    id_speciality: null
+    id_speciality: null as number | null
   }
 
   constructor(private http: HttpClient,private router:Router) {
@@ -42,16 +49,37 @@ export class RegisterComponent {
         console.log('Dados recebidos:', this.profissoes);
       });
   }
+  getSpecialtiesByProfession() {
+    console.log('Profissão selecionada:', this.selectedProfession);
+    if (this.selectedProfession !== null) {
+      this.http.get<any[]>(`http://127.0.0.1:3333/groupespecialidade/groupespecialidade/:id/especialities/${this.selectedProfession}/especialities`)
+        .subscribe((data: any[]) => {
+          console.log('Dados recebidos da API:', data);
+          // Mapear os dados recebidos para o formato de Especialidade
+          this.specialties = data.map(item => ({ id: item.id, description: item.description }));
+        });
+    } else {
+      this.specialties = [];
+    }
+  }
+  
+  
+  
+  
+  
 
 
   salvarFree() {
+    if (this.selectedSpecialty !== null) {
+      this.userFree.id_speciality = this.selectedSpecialty;
+    } else {
+      this.userFree.id_speciality = null;
+    }
+  
     this.http.post('http://127.0.0.1:3333/users', this.userFree)
       .subscribe(res => {
-        alert('Castrado com sucesso');
-        this.router.navigate(['/portal/login'])
-       })
-  }
-
-
-
+        alert('Cadastrado com sucesso');
+        this.router.navigate(['/portal/login']);
+      });
+}
 }
