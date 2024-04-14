@@ -2,12 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+interface Provincia{
+  id: number;
+  description: string;
+}
+
 @Component({
   selector: 'app-register-company',
   templateUrl: './register-company.component.html',
   styleUrls: ['./register-company.component.css']
 })
 export class RegisterCompanyComponent {
+
+  provincySelecionada: Provincia | null = null;
+  provincias: Provincia[] = [];
 
   userComp = {
     fullname: null,
@@ -24,7 +32,16 @@ export class RegisterCompanyComponent {
   }
 
   constructor(private http: HttpClient, private router:Router) {
+    this.getProvincia()
 
+  }
+
+  getProvincia() {
+    this.http.get<any>('http://127.0.0.1:3333/city')
+      .subscribe(res => {
+        this.provincias = res.city;
+        console.log('Dados recebidos:', this.provincias);
+      });
   }
 
   salvarComp() {

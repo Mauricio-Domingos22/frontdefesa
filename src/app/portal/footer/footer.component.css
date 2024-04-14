@@ -1,0 +1,123 @@
+
+a{
+    text-decoration: none;
+    color: black;
+ }
+
+footer{
+    background-color: #000;
+    color: #fff;
+    padding: 50px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+footer .right{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+}
+
+footer .right .links{
+    display: flex;
+    gap: 30px;
+}
+
+footer .right .links a{
+    font-size: 14px;
+    color: #989898;
+    transition: color 0.3s ease;
+}
+
+footer .right .links a:hover{
+    color: #fff;
+}
+
+footer .right .social{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .right .social i{
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+footer .right .social i:hover{
+    color: #1976D2;
+}
+
+footer .right p{
+    margin-top: 40px;
+    font-size: 12px;
+    color: #777;
+}
+
+
+@media screen and (max-width: 1400px) {
+    
+    footer{
+        padding: 50px 30px;
+    }
+
+  
+}
+
+@media screen and (max-width: 1200px) {
+    
+    footer .links a{
+        font-size: 13px;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+
+    footer{
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+    footer .right{
+        width: 100%;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    
+    footer{
+        padding: 40px 20px;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    footer .right p{
+        font-size: 10px;
+    }
+    
+}
+
+
+@media screen and (max-width: 425px) {
+  
+    footer .links a{
+        font-size: 11px;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+    footer .links a{
+        font-size: 10px;
+    }
+
+}

@@ -9,15 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class ContractComponent {
 
   contract = {
-    freelancer:null,
-    company:null,
-    description:null,
-    term:null,
-    value:null,
-    date_contract:null,
-    number_prototype:null,
-    signature_freelancer:"assinado",
-    signature_company:"assinado"
+    descriptionService:null,
   }
 
   constructor(
@@ -28,7 +20,7 @@ export class ContractComponent {
   }
 
 
-  efectuar() {
+  enviar() {
     this.http.post('http://127.0.0.1:3333/contrato', this.contract)
       .subscribe(res => {
         console.log(this.contract)

@@ -20,8 +20,8 @@
           <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="userComp.phone" placeholder="9XXXXXXXXX" maxlength="9">
         </div>
         <div class="col-md-6">
-          <label for="userName" class="form-label">Nome do Proprietario</label>
-          <input type="text" class="form-control" name="name_company" [(ngModel)]="userComp.name_company" placeholder="Coloque o seu primeiro e ultimo nome">
+          <label for="userName" class="form-label">Área de actuaçao</label>
+          <input type="text" class="form-control" name="name_company" [(ngModel)]="userComp.name_company" placeholder="Digite a área de actuaçao">
         </div>
         <div class="col-md-6">
           <label for="userName" class="form-label">Nome da Empresa</label>
@@ -46,26 +46,9 @@
 
           <div class="col-md-3">
             <label for="inputCity" class="form-label">Província</label>
-            <select [(ngModel)]="userComp.id_city" name="id_city" class="form-select">
+            <select [(ngModel)]=" provincySelecionada" name=" provincySelecionada" class="form-select">
               <option selected>Selecione</option>
-              <option value="1">Luanda</option>
-              <option value="2">Benguela</option>
-              <option value="3">Cabinda</option>
-              <option value="4">Cunene</option>
-              <option value="5">Huambo</option>
-              <option value="6">Uige</option>
-              <option value="7">Moxico</option>
-              <option value="8">Huila</option>
-              <option value="9">Zaire</option>
-              <option value="10">Luanda Norte</option>
-              <option value="11">Lunda Sul</option>
-              <option value="12">Kuando Kubango</option>
-              <option value="13">Namibe</option>
-              <option value="14">Kwuanza Norte</option>
-              <option value="15">Kwuanza Sul</option>
-              <option value="16">Bié</option>
-              <option value="17">Malanje</option>
-              <option value="18">Bengo</option>
+              <option *ngFor="let provincia of provincias" [ngValue]="provincia">{{ provincia.description }}</option>
             </select>
           </div>
         
@@ -87,3 +70,5 @@
       </form>
 
 </div>
+
+<app-footer></app-footer>

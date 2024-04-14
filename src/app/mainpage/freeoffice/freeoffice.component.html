@@ -10,10 +10,17 @@
 
 
           <div class="card container" *ngFor="let item of publications">
+            <div class="company">
+            <a href="#" class="profile">
+              <img src="../../../assets/img/download (1).png">
+          </a>
+          <label for="profile">Ajca-Digital</label>
+        </div>
             <h5 class="card-header">{{ item.subject }}</h5>
             <div class="card-body">
               <h5 class="card-title">#</h5>
               <p class="card-text">{{ item.body }}</p>
+              <!-- <img src="..." class="card-img-bottom" alt="..."> -->
               <input type="button" class="btn btn-primary" (click)="submeter()" value="Submeter Portifólio">
               <!-- <a href="#" class="btn btn-primary">Submeter</a> -->
             </div>

@@ -13,12 +13,13 @@
                 <div class="user">
                     <div class="separatorInfo">
                         <img src="../../../assets/img/download (1).png">
+                        <button class="changePhoto">edit</button>
                         <div class="nameProfission">
                             <h5>{{ nameUser }}</h5>
                             <h6>{{ specialitys }}</h6>
                             <div class="buttons">
                              <button>Enviar mensagem</button>
-                             <button><a [routerLink]="['/area_de_trabalho/contrato']">Efectuar contrato</a></button>
+                             <button><a [routerLink]="['/area_de_trabalho/contrato']">Solicitar serviço</a></button>
                             </div>
                         </div>
                     </div>
@@ -39,8 +40,9 @@
                                         placeholder="ex: frase favorita">
                                 </div>
 
-                                <div class="col-12">
-                                    <button type="button" class="btn btn-primary btnRegister">salvar</button>
+                                <div class="col-12 btns">
+                                    <button type="button" class="btn btn-primary btnRegister" id="first">salvar</button>
+                                    <button type="button" class="btn btn-primary btnRegister">editar</button>
                                 </div>
                             </form>
 

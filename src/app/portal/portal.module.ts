@@ -8,7 +8,8 @@ import { RegisterComponent } from './register/register.component';
 import { RegisterCompanyComponent } from './register-company/register-company.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component'
 
 
 
@@ -18,7 +19,8 @@ import {HttpClientModule} from '@angular/common/http'
     LoginComponent,
     RegisterComponent,
     RegisterCompanyComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

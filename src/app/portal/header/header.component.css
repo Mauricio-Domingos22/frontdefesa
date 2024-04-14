@@ -1,11 +1,19 @@
 .navigation{
     background: #000 !important;
+    z-index: 999;
+    position:sticky !important;
+    top: 0 !important;
+ 
+ }
+ .container{
+  width: 83%;
  }
  .navbar-brand{
     font-weight: 700;
     color: #fff;
     font-size: 20px;
-    margin-right: 300px !important;
+    /* margin-left: 45px; */
+    margin-right: 50px !important;
  }
  .navbar-brand:hover{
   

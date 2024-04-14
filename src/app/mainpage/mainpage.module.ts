@@ -11,7 +11,8 @@ import { FreeofficeComponent } from './freeoffice/freeoffice.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PublicationsComponent } from './publications/publications.component';
 import { ContractComponent } from './contract/contract.component';
-import { ShowcontractComponent } from './showcontract/showcontract.component'
+import { ShowcontractComponent } from './showcontract/showcontract.component';
+import { ContratoCriterioComponent } from './contrato-criterio/contrato-criterio.component'
 
 
 
@@ -24,7 +25,8 @@ import { ShowcontractComponent } from './showcontract/showcontract.component'
     PerfilComponent,
     PublicationsComponent,
     ContractComponent,
-    ShowcontractComponent
+    ShowcontractComponent,
+    ContratoCriterioComponent
   ],
   imports: [
     CommonModule,

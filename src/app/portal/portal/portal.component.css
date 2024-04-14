@@ -1,40 +1,4 @@
-.navigation{
-    background: #000 !important;
- }
- .navbar-brand{
-    font-weight: 700;
-    color: #fff;
-    font-size: 20px;
-    margin-right: 300px !important;
- }
- .navbar-brand:hover{
-  
-    color: #fff !important;
-   
- }
- 
- .nav-link{
-    color: #fff;
-    font-size: 14px;
- }
- .list:hover{
-    color: #1976D2;
- }
- .list-service{
-    color: white !important;
- }
- .list-service:hover{
-    color: #1976D2 !important;
- }
- .dropdown-menu{
-    border-radius: 5px !important;
- }
- .dropdown-menu .drop-select:hover{
-  background: #1976D2 !important;
-  color: white !important;
-  transition: 0.3s ease;
- }
- 
+
  .registerButton{
     background-color: transparent !important;
     border: 1px solid #1976D2;
@@ -70,6 +34,9 @@
     display: flex;
     flex-direction: row;
     gap: 40px;
+  }
+  header .left .butti span:hover {
+    color: #1976D2;
   }
   header .left h1{
     font-size: 40px;
@@ -144,62 +111,7 @@
  padding: 0 4px;
   }
 
-  footer{
-    background-color: #000;
-    color: #fff;
-    padding: 100px 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-footer h3{
-    font-size: 48px;
-}
-
-footer .right{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 26px;
-}
-
-footer .right .links{
-    display: flex;
-    gap: 30px;
-}
-
-footer .right .links a{
-    color: #989898;
-    transition: color 0.3s ease;
-}
-
-footer .right .links a:hover{
-    color: #fff;
-}
-
-footer .right .social{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-footer .right .social i{
-    font-size: 30px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-footer .right .social i:hover{
-    color: #1976D2;
-}
-
-footer .right p{
-    font-size: 13px;
-    color: #777;
-}
-
+ 
 
 
   @media screen and (max-width: 1200px){

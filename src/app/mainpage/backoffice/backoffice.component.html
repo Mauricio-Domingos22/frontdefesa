@@ -1,148 +1,167 @@
 <head>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <app-headertwo></app-headertwo>
 
 <body>
-<div class="content">
-<main>
-    
-
-<!-- Search not exist -->
-<div class="searchResponse">
-    <i class='bx bx-tired'></i>
-<p>Resultado não encontrado !</p>
-</div>
-<!--End Response not exist -->
+    <div class="content">
+        <main>
 
 
-    <!-- Insights -->
-  
-    <div class="insights">
-         
-        <div class="public">
-        <form action="">
-
-            <div class="form-title">
-                <input type="text" name="subject" [(ngModel)]="publication.subject" placeholder=" Titulo do servico" >
+            <!-- Search not exist -->
+            <div class="searchResponse">
+                <i class='bx bx-tired'></i>
+                <p>Resultado não encontrado !</p>
             </div>
-            <div class="form-group">
-              <textarea name="message" [(ngModel)]="publication.body" class="form-control" rows="5"
-              placeholder="Descreva o Serviço aqui..."></textarea>
+            <!--End Response not exist -->
+
+
+            <!-- Insights -->
+
+            <div class="insights">
+
+                <div class="public">
+                    <form action="">
+
+                        <div class="form-title">
+                            <input type="text" name="subject" [(ngModel)]="publication.subject"
+                                placeholder=" Titulo do servico">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" [(ngModel)]="publication.body" class="form-control" rows="5"
+                                placeholder="Descreva o Serviço aqui..."></textarea>
+                        </div>
+                        <div class="publicService">
+                            <div>
+                                <label for="inputProfi" class="form-label">Profissão</label>
+                                <select [(ngModel)]="profissaoSelecionada" name="profissaoSelecionada"
+                                    class="form-select">
+                                    <option selected>Selecione</option>
+                                    <option *ngFor="let profissao of profissoes" [ngValue]="profissao">{{
+                                        profissao.description }}</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="inputEsp" class="form-label">Especialidade</label>
+                                <select [(ngModel)]="especialidadeSelecionada" name="especialidadeSelecionada"
+                                    class="form-select">
+                                    <option selected>Selecione</option>
+                                    <option *ngFor="let especialidade of especialidades" [ngValue]="especialidade">{{
+                                        especialidade.description }}</option>
+                                </select>
+                            </div>
+
+                            <input type="button" (click)="publicar()" value="Publicar">
+
+                        </div>
+                        <div class="file">
+                            <button class="image" (click)="openFileInput()">
+                                <i class='bx bx-image'></i>
+                                <input type="file" #fileInput style="display: none;" (change)="onFileSelected($event)">
+                            </button>
+                        </div>
+                    </form>
+
+
+                </div>
+                <div class="aditional">
+                    <a href="#" class="report">
+                        <span>Minhas Publibacoes</span>
+                    </a>
+
+                </div>
             </div>
-            <div class="publicService">
-              <select >
-                <option value="1">Designer</option>
-                <option value="2">Programador</option>
-                <option value="3">Arquiteto</option>
-              </select>
 
-              <select name="id_speciality" [(ngModel)]="publication.id_speciality">
-                <option value="1">Gráfico</option>
-                <option value="2">UX/UI</option>
-                <option value="3">Mídias</option>
-              </select>
-            
-              <input type="button" (click)="publicar()" value="Publicar">
-            </div>
-            </form>
-
-
-        </div>
-         <div class="aditional">
-         <a href="#" class="report">
-            <span>Minhas Publibacoes</span>
-        </a>
-        
-    </div>
-    </div>
-   
-    <!-- End Users Section -->
+            <!-- End Users Section -->
 
 
 
-    <div class="bottom-data">
-        <div class="orders">
-            <div class="header">
-                <i class='bx bx-receipt'></i>
-                <h3>Freelancers Interessados</h3>
-                <i class='bx bx-filter'></i>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Date de envio</th>
-                        <th>Visualizar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <img src="../../../assets/img/download (1).png">
-                            <p>Mauro Bete</p>
-                        </td>
-                        <td>14-08-2023</td>
-                        <td><span class="viewPortifolio">Portifólio</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="../../../assets/img/download (1).png">
-                            <p>Osvaldo Pedro</p>
-                        </td>
-                        <td>14-08-2023</td>
-                        <td><span class="viewPortifolio">Portifólio</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="../../../assets/img/download (1).png">
-                            <p>Maria Sousa</p>
-                        </td>
-                        <td>14-08-2023</td>
-                        <td><span class="viewPortifolio">Portifólio</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
 
-        <!-- Reminders -->
-        <div class="reminders">
-            <div class="header">
-                <i class='bx bx-note'></i>
-                <h3>Contratos Efectuados</h3>
-               
-            </div>
-            <ul class="task-list">
-                <li class="completed">
-                    <div class="task-title">
-                        <i class='bx bx-check-circle'></i>
-                        <p>Designer para criação de Post dia da mulher</p>
+                        <h4>Aniversário da Empresa AJCA - Digital</h4>
+
+                        <h3><i class='bx bx-receipt'></i> Freelancers Interessados</h3>
+
+                        <!-- <i class='bx bx-filter'></i> -->
+
                     </div>
-                    <i class='bx bx-dots-vertical-rounded'></i>
-                </li>
-                <li class="completed">
-                    <div class="task-title">
-                        <i class='bx bx-check-circle'></i>
-                        <p>Fotógrafo para evento Março Mullher</p>
-                    </div>
-                    <i class='bx bx-dots-vertical-rounded'></i>
-                </li>
-                <li class="not-completed">
-                    <div class="task-title">
-                        <i class='bx bx-x-circle'></i>
-                        <p>Descoradoa Março Mulher</p>
-                    </div>
-                    <i class='bx bx-dots-vertical-rounded'></i>
-                </li>
-            </ul>
-        </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Date de envio</th>
+                                <th>Visualizar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="../../../assets/img/download (1).png">
+                                    <p>Mauro Bete</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="viewPortifolio">Portifólio</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="../../../assets/img/download (1).png">
+                                    <p>Osvaldo Pedro</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="viewPortifolio">Portifólio</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="../../../assets/img/download (1).png">
+                                    <p>Maria Sousa</p>
+                                </td>
+                                <td>14-08-2023</td>
+                                <td><span class="viewPortifolio">Portifólio</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-        <!-- End of Reminders-->
+                <!-- Reminders -->
+                <div class="reminders">
+                    <div class="header">
+                        <!-- <i class='bx bx-note'></i> -->
+                        <h3>Contratos Efectuados</h3>
+
+                    </div>
+                    <ul class="task-list">
+                        <li class="completed">
+                            <div class="task-title">
+                                <i class='bx bx-check-circle'></i>
+                                <p>Designer para criação de Post dia da mulher</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="completed">
+                            <div class="task-title">
+                                <i class='bx bx-check-circle'></i>
+                                <p>Fotógrafo para evento Março Mullher</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                        <li class="not-completed">
+                            <div class="task-title">
+                                <i class='bx bx-x-circle'></i>
+                                <p>Descoradoa Março Mulher</p>
+                            </div>
+                            <i class='bx bx-dots-vertical-rounded'></i>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- End of Reminders-->
+
+            </div>
+
+        </main>
 
     </div>
-
-</main>
-
-</div>
 </body>

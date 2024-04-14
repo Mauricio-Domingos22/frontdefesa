@@ -5,13 +5,15 @@ import { FreeofficeComponent } from './freeoffice/freeoffice.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ContractComponent } from './contract/contract.component';
 import { ShowcontractComponent } from './showcontract/showcontract.component';
+import { ContratoCriterioComponent } from './contrato-criterio/contrato-criterio.component';
 
 const routes: Routes = [
   {path:'empresa_trabalho', component:BackofficeComponent},
   {path:'freelance_trabalho', component:FreeofficeComponent},
   {path:'perfil_usuario', component:PerfilComponent},
   {path:'contrato', component:ContractComponent},
-  {path:'vercontrato', component:ShowcontractComponent}
+  {path:'vercontrato', component:ShowcontractComponent},
+  {path:'contratocriterios', component:ContratoCriterioComponent}
 
 ];
 

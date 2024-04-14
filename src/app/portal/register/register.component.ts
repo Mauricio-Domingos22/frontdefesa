@@ -7,8 +7,13 @@ interface Profissao {
   id: number;
   description: string;
 }
-interface Especialidade {
+interface Provincia{
   id: number;
+  description: string;
+}
+
+interface especialidade{
+  id:number;
   description: string;
 }
 
@@ -21,9 +26,13 @@ export class RegisterComponent {
   profissaoSelecionada: Profissao | null = null;
   
   profissoes: Profissao[] = [];
-  specialties: Especialidade[] = [];
-  selectedProfession: number | null = null;
-  selectedSpecialty: number | null = null;
+
+  provincySelecionada: Provincia | null = null;
+
+  provincias: Provincia[] = [];
+
+  especialidadeSelecionada: especialidade | null = null;
+  especialidades: especialidade[] =[];
 
   userFree = {
     fullname: null,
@@ -35,11 +44,13 @@ export class RegisterComponent {
     id_gender: null,
     id_city: null,
     id_type_user: 1,
-    id_speciality: null as number | null
+    id_speciality: null
   }
 
   constructor(private http: HttpClient,private router:Router) {
     this.getProfissoes()
+    this.getProvincia()
+    this.getEspecialidade()
 
   }
   getProfissoes() {
@@ -49,37 +60,35 @@ export class RegisterComponent {
         console.log('Dados recebidos:', this.profissoes);
       });
   }
-  getSpecialtiesByProfession() {
-    console.log('Profissão selecionada:', this.selectedProfession);
-    if (this.selectedProfession !== null) {
-      this.http.get<any[]>(`http://127.0.0.1:3333/groupespecialidade/groupespecialidade/:id/especialities/${this.selectedProfession}/especialities`)
-        .subscribe((data: any[]) => {
-          console.log('Dados recebidos da API:', data);
-          // Mapear os dados recebidos para o formato de Especialidade
-          this.specialties = data.map(item => ({ id: item.id, description: item.description }));
-        });
-    } else {
-      this.specialties = [];
-    }
+
+  getProvincia() {
+    this.http.get<any>('http://127.0.0.1:3333/city')
+      .subscribe(res => {
+        this.provincias = res.city;
+        console.log('Dados recebidos:', this.provincias);
+      });
   }
-  
-  
-  
-  
-  
+
+  getEspecialidade() {
+    this.http.get<any>('http://127.0.0.1:3333/especialidade')
+      .subscribe(res => {
+        this.especialidades = res.specialties;
+        console.log('Dados recebidos:', this.especialidades);
+      });
+  }
+
+
 
 
   salvarFree() {
-    if (this.selectedSpecialty !== null) {
-      this.userFree.id_speciality = this.selectedSpecialty;
-    } else {
-      this.userFree.id_speciality = null;
-    }
-  
     this.http.post('http://127.0.0.1:3333/users', this.userFree)
       .subscribe(res => {
-        alert('Cadastrado com sucesso');
-        this.router.navigate(['/portal/login']);
-      });
+        alert('Castrado com sucesso');
+        this.router.navigate(['/portal/login'])
+       })
+  }
+
+
+
 }
-}
+

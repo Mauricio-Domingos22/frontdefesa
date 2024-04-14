@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./mainpage/mainpage.module').then(m => m.MainpageModule)
   },
   {path:'', redirectTo:'/portal', pathMatch:'full'},
-  {path:'**', redirectTo:'/portal', pathMatch:'full'},
+ 
 ];
 
 @NgModule({

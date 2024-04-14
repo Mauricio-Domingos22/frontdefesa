@@ -968,8 +968,8 @@ margin-top: 30px;
     border-radius: 50%;
     border: 2px solid rgba(0, 0, 0, 0.2);
     transform: translateY(-65px);
-    margin-top: 20px;
-    margin-bottom: -40px;
+    margin-top: 50px;
+    margin-bottom: -50px;
 }
 .texto{
     background: #fff;
@@ -1002,10 +1002,22 @@ margin-top: 30px;
     
 }
 .buttons button:hover{
-    
-    background: #2586e7;
-   
+    background: #2586e7; 
 }
+.changePhoto{
+    padding: 5px;
+    border: 1px solid #1976D2;
+    border-radius: 5px;
+    outline: none;
+    font-size: 10px;
+}
+#first{
+    margin-right: 10px;
+}
+.btns button{
+    font-size: 12px;
+}
+
 @media screen and (max-width: 768px) {
     .sidebar{
         width: 200px;

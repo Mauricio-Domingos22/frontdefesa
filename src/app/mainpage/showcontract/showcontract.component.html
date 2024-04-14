@@ -9,75 +9,98 @@
         <main>
 
 
+
             <div class="container viewAll">
-                <div class="row">
-                    <div class="col-md-12 table-responsive">
-                        <table class="table table-bordered">
-                            <thead class="table-primary">
-                                <tr>
+                <ul>
+                    <li><a>Celebração do Dia da Mulher: Empoderando, Inspirando</a> <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            visualizar
+                        </button>
+                     <!-- Modal -->
+                     <div class="modal fade" id="exampleModal" tabindex="-1"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                     <div class="modal-dialog">
+                         <div class="modal-content">
+                             <div class="modal-header">
+                                 <h1 class="modal-title fs-5" id="exampleModalLabel">ProtecFree
+                                 </h1>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                     aria-label="Close"></button>
+                             </div>
+                             <div class="modal-body">
+                                 <h6>Contrato de prestaçao de servico</h6>
+                                 <p>{{ descricao }}</p>
+                                 <hr>
+                                 <p class="entity">Empresa:</p>
+                                 <p class="entity">NIF:</p>
+                                 <hr>
+                                 <p class="entity">Freelancer:</p>
+                                 <p class="entity">Nº do BI:</p>
+                                 <hr>
+                                 <p class="entity">Valor:</p>
+                                 <p class="entity">{{ datadeentrega }}</p>
+                                 <p class="entity">Nº de Protótipo:</p>
+                                 <hr>
+                                 <p class="entity">Data:</p>
 
-                                    <th scope="col">Serviço</th>
-                                    <th scope="col">Exibir</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>hhhhhhhhhhhhhhhgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+                             </div>
+                             <div class="modal-footer">
 
-                                    </td>
-                                    <td>
-                                        <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal">
-                                            visualizar
-                                        </button>
+                                 <button type="button" class="btn btn-primary">Baixar</button>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                    
+                    
+                    </li>
+                    <hr>
+                    <li><a>Celebração do Dia da Mulher: Empoderando, Inspirando</a> <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            visualizar
+                        </button>
+                     <!-- Modal -->
+                     <div class="modal fade" id="exampleModal" #exampleModal tabindex="-1"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                     <div class="modal-dialog">
+                         <div class="modal-content">
+                             <div class="modal-header">
+                                 <h1 class="modal-title fs-5" id="exampleModalLabel">ProtecFree
+                                 </h1>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                     aria-label="Close"></button>
+                             </div>
+                             <div class="modal-body">
+                                 <h6>Contrato de prestaçao de servico</h6>
+                                 <p>{{ descricao }}</p>
+                                 <hr>
+                                 <p class="entity">Empresa:</p>
+                                 <p class="entity">NIF:</p>
+                                 <hr>
+                                 <p class="entity">Freelancer:</p>
+                                 <p class="entity">Nº do BI:</p>
+                                 <hr>
+                                 <p class="entity">Valor:</p>
+                                 <p class="entity">{{ datadeentrega }}</p>
+                                 <p class="entity">Nº de Protótipo:</p>
+                                 <hr>
+                                 <p class="entity">Data:</p>
 
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="exampleModal" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">ProtecFree
-                                                        </h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <h6>Contrato de prestaçao de servico</h6>
-                                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                            Totam animi modi sed asperiores tempore. Sapiente, sed. Nemo
-                                                            nostrum laboriosam magnam eveniet necessitatibus quam
-                                                            voluptas iste vel, recusandae dicta ducimus reiciendis.</p>
-                                                            <hr>
-                                                            <p class="entity">Empresa:</p>
-                                                            <p class="entity">NIF:</p>
-                                                            <hr>
-                                                            <p class="entity">Freelancer:</p>
-                                                            <p class="entity">Nº do BI:</p>
-                                                            <hr>
-                                                            <p class="entity">Valor:</p>
-                                                            <p class="entity">Data de entrega:</p>
-                                                            <p class="entity">Nº de Protótipo:</p>
-                                                            <hr>
-                                                            <p class="entity">Data:</p>
+                             </div>
+                             <div class="modal-footer">
 
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        
-                                                        <button type="button" class="btn btn-primary">Baixar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                </tr>
-
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                                 <button type="button" (click)="printPDF()">Baixar</button>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                    
+                    
+                    </li>
+                    <hr>
+                </ul>
             </div>
 
 
