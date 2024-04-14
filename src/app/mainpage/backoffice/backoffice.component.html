@@ -78,10 +78,10 @@
 
 
             <div class="bottom-data">
-                <div class="orders">
+                <div class="orders" *ngFor="let item of usersFreelancerPublications">
                     <div class="header">
 
-                        <h4>Aniversário da Empresa AJCA - Digital</h4>
+                        <h4>{{ item.publications[0].subject  }}</h4>
 
                         <h3><i class='bx bx-receipt'></i> Freelancers Interessados</h3>
 
@@ -91,20 +91,18 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Publicação</th>
-                                <th>Nome</th>
-                                <th>Date de envio</th>
+                                <th>Frelancer</th>
+                                <!--<th>Date de Submetida</th>-->
                                 <th>Visualizar</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of usersFreelancerPublications">
-                                <td>{{ item.publications[0].subject  }}</td>
+                            <tr *ngFor="let freelancer of item.users_frelancer">
                                 <td>
                                     <img src="../../../assets/img/download (1).png">
-                                    <p>{{ item.users_frelancer[0].user.fullname }}</p>
+                                    <p>{{ freelancer.user.fullname }}</p>
                                 </td>
-                                <td>{{ item.date_submit }}</td>
+                                <!--<td>{{ item.date_submit }}</td>-->
                                 <td><span class="viewPortifolio">Portifólio</span></td>
                             </tr>
                             <!--<tr>
