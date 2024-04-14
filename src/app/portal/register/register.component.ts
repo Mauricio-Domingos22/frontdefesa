@@ -7,13 +7,13 @@ interface Profissao {
   id: number;
   description: string;
 }
-interface Provincia{
+interface Provincia {
   id: number;
   description: string;
 }
 
-interface especialidade{
-  id:number;
+interface especialidade {
+  id: number;
   description: string;
 }
 
@@ -23,8 +23,9 @@ interface especialidade{
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+
   profissaoSelecionada: Profissao | null = null;
-  
+
   profissoes: Profissao[] = [];
 
   provincySelecionada: Provincia | null = null;
@@ -32,7 +33,7 @@ export class RegisterComponent {
   provincias: Provincia[] = [];
 
   especialidadeSelecionada: especialidade | null = null;
-  especialidades: especialidade[] =[];
+  especialidades: especialidade[] = [];
 
   userFree = {
     fullname: null,
@@ -47,10 +48,10 @@ export class RegisterComponent {
     id_speciality: null
   }
 
-  constructor(private http: HttpClient,private router:Router) {
+  constructor(private http: HttpClient, private router: Router) {
     this.getProfissoes()
     this.getProvincia()
-    this.getEspecialidade()
+    //this.getEspecialidade()
 
   }
   getProfissoes() {
@@ -61,6 +62,15 @@ export class RegisterComponent {
       });
   }
 
+  GetEspecialidadByProfissao() {
+
+    this.http.get<any>('http://127.0.0.1:3333/get-especialidad-by-profissao/' + this.profissaoSelecionada?.id)
+      .subscribe(res => {
+        this.especialidades = res;
+      });
+
+  }
+
   getProvincia() {
     this.http.get<any>('http://127.0.0.1:3333/city')
       .subscribe(res => {
@@ -69,13 +79,13 @@ export class RegisterComponent {
       });
   }
 
-  getEspecialidade() {
+  /*getEspecialidade() {
     this.http.get<any>('http://127.0.0.1:3333/especialidade')
       .subscribe(res => {
         this.especialidades = res.specialties;
         console.log('Dados recebidos:', this.especialidades);
       });
-  }
+  }*/
 
 
 
@@ -90,9 +100,14 @@ export class RegisterComponent {
 
     this.http.post('http://127.0.0.1:3333/users', this.userFree)
       .subscribe(res => {
-        alert('Castrado com sucesso');
-        this.router.navigate(['/portal/login'])
-       })
+
+        if (res) {
+          alert('Castrado com sucesso');
+          this.router.navigate(['/portal/login'])
+        } else {
+          alert('Erro ao registar usuário');
+        }
+      })
   }
 
 

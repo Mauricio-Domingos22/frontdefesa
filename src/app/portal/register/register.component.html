@@ -39,14 +39,14 @@
         </div>
       <div class="col-md-3">
         <label for="inputCity" class="form-label">Província</label>
-         <select [(ngModel)]=" provincySelecionada" name=" provincySelecionada" class="form-select">
+         <select [(ngModel)]="userFree.id_city" name="id_city" class="form-select">
           <option selected>Selecione</option>
-          <option *ngFor="let provincia of provincias" [ngValue]="provincia">{{ provincia.description }}</option>
+          <option *ngFor="let provincia of provincias" value="{{provincia.id}}">{{ provincia.description }}</option>
         </select>
       </div>
       <div class="col-md-3">
           <label for="inputProfi" class="form-label">Profissão</label>
-          <select [(ngModel)]="profissaoSelecionada" name="profissaoSelecionada" class="form-select">
+          <select [(ngModel)]="profissaoSelecionada" (change)="GetEspecialidadByProfissao()" name="profissaoSelecionada" class="form-select">
             <option selected>Selecione</option>
         <option *ngFor="let profissao of profissoes" [ngValue]="profissao">{{ profissao.description }}</option>
           </select>
@@ -55,7 +55,7 @@
         <label for="inputEsp" class="form-label">Especialidade</label>
           <select [(ngModel)]="especialidadeSelecionada" name="especialidadeSelecionada" class="form-select">
             <option selected>Selecione</option>
-            <option *ngFor="let especialidade of especialidades" [ngValue]="especialidade">{{ especialidade.description }}</option>
+            <option *ngFor="let especialidade of especialidades" value="{{ especialidade.id }}">{{ especialidade.description }}</option>
           </select>
         </div>
       <div class="col-12">

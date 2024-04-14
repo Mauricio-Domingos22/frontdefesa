@@ -2,11 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-interface Provincia{
-  id: number;
-  description: string;
-}
-
 @Component({
   selector: 'app-register-company',
   templateUrl: './register-company.component.html',
@@ -14,8 +9,7 @@ interface Provincia{
 })
 export class RegisterCompanyComponent {
 
-  provincySelecionada: Provincia | null = null;
-  provincias: Provincia[] = [];
+  provincias: any = [];
 
   userComp = {
     fullname: null,
@@ -27,11 +21,11 @@ export class RegisterCompanyComponent {
     id_gender: null,
     id_city: null,
     id_type_user: 2,
-    name_company:null,
-    nif:null
+    name_company: null,
+    nif: null
   }
 
-  constructor(private http: HttpClient, private router:Router) {
+  constructor(private http: HttpClient, private router: Router) {
     this.getProvincia()
 
   }
@@ -45,10 +39,17 @@ export class RegisterCompanyComponent {
   }
 
   salvarComp() {
+
     this.http.post('http://127.0.0.1:3333/users', this.userComp)
-      .subscribe(res => { 
-        alert('Castrado com sucesso');
-        this.router.navigate(['/portal/login'])
+      .subscribe(res => {
+
+        if (res) {
+          alert('Castrado com sucesso');
+
+          this.router.navigate(['/portal/login'])
+        } else {
+          alert('Erro ao registar usuário empresa');
+        }
       })
   }
 

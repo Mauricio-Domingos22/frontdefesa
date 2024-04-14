@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { Component,ViewChild, ElementRef} from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 interface Profissao {
   id: number;
   description: string;
 }
 
-interface especialidade{
-  id:number;
+interface especialidade {
+  id: number;
   description: string;
 }
 
@@ -19,11 +19,13 @@ interface especialidade{
 export class BackofficeComponent {
 
   profissaoSelecionada: Profissao | null = null;
-  
+
   profissoes: Profissao[] = [];
 
   especialidadeSelecionada: especialidade | null = null;
-  especialidades: especialidade[] =[];
+  especialidades: especialidade[] = [];
+
+  usersFreelancerPublications: any = {}
 
   @ViewChild('fileInput') fileInput: ElementRef;
 
@@ -42,6 +44,7 @@ export class BackofficeComponent {
     this.fileInput = new ElementRef(null);
     this.getProfissoes()
     this.getEspecialidade()
+    this.getUserFreelancerPublications()
   }
 
   publicar() {
@@ -68,19 +71,28 @@ export class BackofficeComponent {
       });
   }
 
+  getUserFreelancerPublications() {
+
+    this.http.get<any>('http://127.0.0.1:3333/get-user-freelancer-publications')
+      .subscribe(res => {
+
+        this.usersFreelancerPublications = res
+      });
+  }
+
 
   openFileInput() {
     this.fileInput.nativeElement.click();
-    
+
   }
 
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
-    
+
     // Verifique se input.files não é nulo antes de acessá-lo
     if (input.files && input.files.length > 0) {
       const file = input.files[0];
-      
+
       console.log("Arquivo selecionado:", file.name);
     } else {
       console.error("Nenhum arquivo selecionado.");
