@@ -23,6 +23,7 @@ interface especialidade {
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+
   profissaoSelecionada: Profissao | null = null;
 
   profissoes: Profissao[] = [];
@@ -62,7 +63,7 @@ export class RegisterComponent {
   }
 
   GetEspecialidadByProfissao() {
-    
+
     this.http.get<any>('http://127.0.0.1:3333/get-especialidad-by-profissao/' + this.profissaoSelecionada?.id)
       .subscribe(res => {
         this.especialidades = res;
@@ -92,8 +93,13 @@ export class RegisterComponent {
   salvarFree() {
     this.http.post('http://127.0.0.1:3333/users', this.userFree)
       .subscribe(res => {
-        alert('Castrado com sucesso');
-        this.router.navigate(['/portal/login'])
+
+        if (res) {
+          alert('Castrado com sucesso');
+          this.router.navigate(['/portal/login'])
+        } else {
+          alert('Erro ao registar usuário');
+        }
       })
   }
 
