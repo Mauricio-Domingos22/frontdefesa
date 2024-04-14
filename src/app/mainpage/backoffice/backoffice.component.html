@@ -91,6 +91,7 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Publicação</th>
                                 <th>Nome</th>
                                 <th>Date de envio</th>
                                 <th>Visualizar</th>
@@ -98,6 +99,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let item of usersFreelancerPublications">
+                                <td>{{ item.publications[0].subject  }}</td>
                                 <td>
                                     <img src="../../../assets/img/download (1).png">
                                     <p>{{ item.users_frelancer[0].user.fullname }}</p>
