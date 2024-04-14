@@ -55,7 +55,7 @@
         <label for="inputEsp" class="form-label">Especialidade</label>
           <select [(ngModel)]="especialidadeSelecionada" name="especialidadeSelecionada" class="form-select">
             <option selected>Selecione</option>
-            <option *ngFor="let especialidade of especialidades" [ngValue]="especialidade">{{ especialidade.description }}</option>
+            <option *ngFor="let especialidade of especialidades" value="{{ especialidade.id }}">{{ especialidade.description }}</option>
           </select>
         </div>
       <div class="col-12">

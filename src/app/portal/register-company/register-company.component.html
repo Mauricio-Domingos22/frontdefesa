@@ -46,9 +46,9 @@
 
           <div class="col-md-3">
             <label for="inputCity" class="form-label">Província</label>
-            <select [(ngModel)]=" provincySelecionada" name=" provincySelecionada" class="form-select">
+            <select [(ngModel)]="userComp.id_city" name="id_city" class="form-select">
               <option selected>Selecione</option>
-              <option *ngFor="let provincia of provincias" [ngValue]="provincia">{{ provincia.description }}</option>
+              <option *ngFor="let provincia of provincias" value="{{ provincia.id }}">{{ provincia.description }}</option>
             </select>
           </div>
         
