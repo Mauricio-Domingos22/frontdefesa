@@ -12,7 +12,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { PublicationsComponent } from './publications/publications.component';
 import { ContractComponent } from './contract/contract.component';
 import { ShowcontractComponent } from './showcontract/showcontract.component';
-import { ContratoCriterioComponent } from './contrato-criterio/contrato-criterio.component'
+import { ContratoCriterioComponent } from './contrato-criterio/contrato-criterio.component';
+import { ShowPerfilComponent } from './show-perfil/show-perfil.component'
 
 
 
@@ -26,7 +27,8 @@ import { ContratoCriterioComponent } from './contrato-criterio/contrato-criterio
     PublicationsComponent,
     ContractComponent,
     ShowcontractComponent,
-    ContratoCriterioComponent
+    ContratoCriterioComponent,
+    ShowPerfilComponent
   ],
   imports: [
     CommonModule,

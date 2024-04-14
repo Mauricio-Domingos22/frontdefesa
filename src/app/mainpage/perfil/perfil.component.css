@@ -1017,6 +1017,18 @@ margin-top: 30px;
 .btns button{
     font-size: 12px;
 }
+.image-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 18px;
+}
+.image-group img {
+    margin: 10px;
+    max-width: 430px;
+    height: auto;
+}
 
 @media screen and (max-width: 768px) {
     .sidebar{

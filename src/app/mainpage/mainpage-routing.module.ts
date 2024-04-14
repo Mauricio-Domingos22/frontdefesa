@@ -6,6 +6,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { ContractComponent } from './contract/contract.component';
 import { ShowcontractComponent } from './showcontract/showcontract.component';
 import { ContratoCriterioComponent } from './contrato-criterio/contrato-criterio.component';
+import { ShowPerfilComponent } from './show-perfil/show-perfil.component';
 
 const routes: Routes = [
   {path:'empresa_trabalho', component:BackofficeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'perfil_usuario', component:PerfilComponent},
   {path:'contrato', component:ContractComponent},
   {path:'vercontrato', component:ShowcontractComponent},
-  {path:'contratocriterios', component:ContratoCriterioComponent}
+  {path:'contratocriterios', component:ContratoCriterioComponent},
+  {path:'mostrarperfil', component:ShowPerfilComponent}
 
 ];
 

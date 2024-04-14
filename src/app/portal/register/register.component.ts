@@ -81,6 +81,13 @@ export class RegisterComponent {
 
 
   salvarFree() {
+    
+    if (this.userFree.password==null) {
+      alert("O campo password nao deve ser nulo")
+      return
+    }
+
+
     this.http.post('http://127.0.0.1:3333/users', this.userFree)
       .subscribe(res => {
         alert('Castrado com sucesso');
