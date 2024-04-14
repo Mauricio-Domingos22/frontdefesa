@@ -46,7 +46,7 @@
       </div>
       <div class="col-md-3">
           <label for="inputProfi" class="form-label">Profissão</label>
-          <select [(ngModel)]="profissaoSelecionada" name="profissaoSelecionada" class="form-select">
+          <select [(ngModel)]="profissaoSelecionada" (change)="GetEspecialidadByProfissao()" name="profissaoSelecionada" class="form-select">
             <option selected>Selecione</option>
         <option *ngFor="let profissao of profissoes" [ngValue]="profissao">{{ profissao.description }}</option>
           </select>
