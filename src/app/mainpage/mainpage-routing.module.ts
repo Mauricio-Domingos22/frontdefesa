@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'contrato', component:ContractComponent},
   {path:'vercontrato', component:ShowcontractComponent},
   {path:'contratocriterios', component:ContratoCriterioComponent},
-  {path:'mostrarperfil', component:ShowPerfilComponent}
+  {path:'mostrarperfil/:user_frelancer_id', component:ShowPerfilComponent}
 
 ];
 

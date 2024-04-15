@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Profissao {
   id: number;
@@ -38,7 +39,7 @@ export class BackofficeComponent {
   }
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient, private router: Router
 
   ) {
     this.fileInput = new ElementRef(null);
@@ -97,6 +98,11 @@ export class BackofficeComponent {
     } else {
       console.error("Nenhum arquivo selecionado.");
     }
+  }
+
+  verPerfilFreelancer(freelancer: any) {
+    console.log(freelancer.user.id)
+    this.router.navigateByUrl(`/area_de_trabalho/mostrarperfil/` + freelancer.user.id);
   }
 }
 
