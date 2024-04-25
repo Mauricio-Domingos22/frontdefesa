@@ -16,7 +16,8 @@ import { ContratoCriterioComponent } from './contrato-criterio/contrato-criterio
 import { ShowPerfilComponent } from './show-perfil/show-perfil.component';
 import { AdminworkComponent } from './adminwork/adminwork.component';
 import { RulesComponent } from './rules/rules.component';
-import { QueixaComponent } from './queixa/queixa.component'
+import { QueixaComponent } from './queixa/queixa.component';
+import { NotificacoesComponent } from './notificacoes/notificacoes.component'
 
 
 
@@ -34,7 +35,8 @@ import { QueixaComponent } from './queixa/queixa.component'
     ShowPerfilComponent,
     AdminworkComponent,
     RulesComponent,
-    QueixaComponent
+    QueixaComponent,
+    NotificacoesComponent
   ],
   imports: [
     CommonModule,

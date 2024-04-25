@@ -10,6 +10,7 @@ import { ShowPerfilComponent } from './show-perfil/show-perfil.component';
 import { AdminworkComponent } from './adminwork/adminwork.component';
 import { RulesComponent } from './rules/rules.component';
 import { QueixaComponent } from './queixa/queixa.component';
+import { NotificacoesComponent } from './notificacoes/notificacoes.component';
 
 const routes: Routes = [
   {path:'empresa_trabalho', component:BackofficeComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'contratocriterios', component:ContratoCriterioComponent},
   {path:'mostrarperfil/:user_frelancer_id', component:ShowPerfilComponent},
   {path:'regras', component:RulesComponent},
-  {path:'queixa', component:QueixaComponent}
+  {path:'queixa', component:QueixaComponent},
+  {path:'notificacoes', component:NotificacoesComponent}
 
 ];
 
