@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 
@@ -18,9 +19,19 @@ export class PerfilComponent {
   private token = sessionStorage.getItem('sessionToken');
   headers: HttpHeaders;
 
-  constructor(private http: HttpClient) {
+  form_perfil = {
+    description: null,
+    filename: null,
+    file: null,
+    id_freelancer: null
+  }
+
+  constructor(
+    private http: HttpClient,
+    public sanitizer: DomSanitizer
+  ) {
     this.headers = new HttpHeaders()
-      .set('Content-Type', 'application/json')
+      //.set('Content-Type', 'application/json')
       .set('Access-Control-Allow-Origin', '*')
       .set('Authorization', `Bearer ${this.token}`);
   }
@@ -40,7 +51,7 @@ export class PerfilComponent {
   getFileSrc(file: File): string {
     return URL.createObjectURL(file);
   }
-  
+
   uploadImages() {
     if (this.selectedFiles) {
       const formData = new FormData();
@@ -68,7 +79,7 @@ export class PerfilComponent {
     this.http.get<any>('http://127.0.0.1:3333/perfil', { headers: this.headers })
       .subscribe(
         (res: any) => {
-          this.nameUser = res.user.username; 
+          this.nameUser = res.user.username;
           this.specialitys = res.user.especialidade.map((especialidade: any) => especialidade.especialidade).join(', ');
           console.log('Dados recebidos:', this.nameUser);
         },
@@ -76,6 +87,37 @@ export class PerfilComponent {
           console.error('Erro ao obter dados do usuário:', error);
         }
       );
+  }
+
+
+  private images: any = []
+  uploadFile(event: any) {
+
+    this.images = []
+    const file = event.target.files[0];
+    var reader = new FileReader()
+
+    reader.onload = (event: any) => {
+      this.images.push(this.sanitizer.bypassSecurityTrustResourceUrl(event.target.result))
+      this.form_perfil.file = file;
+    }
+
+    reader.readAsDataURL(event.target.files[0])
+  }
+
+  savePorfolio() {
+
+    var formData: any = new FormData();
+    formData.append("description", this.form_perfil.description);
+    formData.append("file", this.form_perfil.file);
+    formData.append("filename", this.form_perfil.filename);
+    formData.append("id_freelancer", this.form_perfil.id_freelancer);
+
+
+    this.http.post("http://127.0.0.1:3333/save-portfolio", formData, { headers: this.headers })
+      .subscribe(res => {
+        console.log(res)
+      })
   }
 }
 

@@ -55,15 +55,15 @@
             <div class="texto">
                 <div class="">
                     <div class="">
-                        <textarea name="description" class="form-control" rows="3"
+                        <textarea name="description" [(ngModel)]="form_perfil.description" class="form-control" rows="3"
                         placeholder="Descreva sobre si..."></textarea>
                     </div>
                 </div>
             </div>
 
             <div class="arquivos">
-                <input type="file" multiple (change)="onFileSelected($event)" accept="image/*">
-                <button (click)="uploadImages()">Salvar</button>
+                <input type="file" multiple (change)="uploadFile($event)" accept="image/*">
+                <button (click)="savePorfolio()">Salvar</button>
               </div>
               
               <div class="image-group" *ngIf="filesArray.length > 0">
