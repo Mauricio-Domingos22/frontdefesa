@@ -13,9 +13,28 @@
                     <h5>Contrato de prestaçao de serviço</h5>
                     <div class="col-md-12">
                         <textarea name="description" [(ngModel)]="contract.descriptionService" class="form-control" rows="5"
-                        placeholder="Descreva o Serviço aqui..."></textarea>
+                        placeholder="Descreva o Serviço detalhadamente especificando tudo..."></textarea>
                       </div>
+                      <div>
+                        <p class="entity">Freelancer: {{ freelancerName }}</p>
+                 
+                        <hr>
+                        <p class="entity">Valor: {{ valor }}</p>
+                        <p class="entity">{{ datadeentrega }}</p>
+                        <p class="entity">Nº de Protótipo: {{ numeroprototipo }}</p>
+                        <p class="entity">Quantidade: {{ quantidade }}</p>
+                        <hr>
+                    </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Comprovativo de pagamento</label>
+                        <input type="file" class="form-control" >
+                        
+                      </div>
+                      <div>
                    <button (click)="enviar()">Enviar</button>
+                   <button >Recusar</button>
+                   <button >Aceitar</button>
+                </div>
                   </form>
             
             </div>

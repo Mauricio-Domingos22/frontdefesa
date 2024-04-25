@@ -1,0 +1,29 @@
+body{
+    background: var(--grey);
+    overflow-x: hidden;
+}
+.container{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 188px !important;
+    margin-top: 30px !important;
+    margin-bottom: 500px !important;
+}
+.accordion-item:focus{
+    box-shadow: none !important;
+}
+.accordion:focus{
+    box-shadow: none !important;
+}
+.accordion-header:focus{
+    box-shadow: none !important;
+}
+.accordion-button:focus{
+    box-shadow: none !important;
+}
+
+#accordionFlushExample{
+  width: 80% !important;
+ 
+}

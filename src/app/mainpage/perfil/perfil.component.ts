@@ -9,6 +9,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent {
+  selectedFiles: FileList | null = null;
+  filesArray: File[] = [];
+  uploadUrl = 'URL_DA_SUA_API/upload'; // Substitua pela URL real da sua API de upload
 
   nameUser: string = '';
   specialitys: string = '';
@@ -22,9 +25,44 @@ export class PerfilComponent {
       .set('Authorization', `Bearer ${this.token}`);
   }
 
-  ngOnInit(): void {
+  ngOnInit(event: any): void {
     this.getInfoPessoalByUser();
+    this.selectedFiles = event.target.files;
   }
+
+  onFileSelected(event: any) {
+    this.selectedFiles = event.target.files;
+    if (this.selectedFiles) {
+      this.filesArray = Array.from(this.selectedFiles);
+    }
+  }
+
+  getFileSrc(file: File): string {
+    return URL.createObjectURL(file);
+  }
+  
+  uploadImages() {
+    if (this.selectedFiles) {
+      const formData = new FormData();
+      for (let i = 0; i < this.selectedFiles.length; i++) {
+        formData.append('images', this.selectedFiles[i]);
+      }
+
+      this.http.post(this.uploadUrl, formData)
+        .subscribe(
+          response => {
+            console.log('Upload bem-sucedido:', response);
+            // Lógica para lidar com a resposta do servidor
+          },
+          error => {
+            console.error('Erro no upload:', error);
+            // Lógica para lidar com erros de upload
+          }
+        );
+    }
+  }
+
+
 
   getInfoPessoalByUser(): void {
     this.http.get<any>('http://127.0.0.1:3333/perfil', { headers: this.headers })

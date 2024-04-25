@@ -14,14 +14,18 @@
                     <div class="col-md-12">
                        <p>{{ descriptionServices }}</p>
                       </div>
+                      <div class="col-md-12">
+                        <p class="entity">Empresa:{{ empresaNome }}</p>
+                      </div>
                        <div class="col-md-3">
                       <label for="phone" class="form-label">valor do serviço</label>
-                      <input type="text" class="form-control" id="phone" name="value" [(ngModel)]="contract.value" placeholder="0000000.00">
+                      <input type="text" class="form-control" id="phone" name="value" [(ngModel)]="contract.value" placeholder="0000.00">
                     </div>
                     <div class="col-md-3">
                       <label for="userName" class="form-label">Data de entrega</label>
                       <input type="date" class="form-control" name="term" [(ngModel)]="contract.term" placeholder="AAAA-MM-DD">
                     </div>
+                    <div class="numeros">
                     <div class="numeroprototipo">
                         <div class="numero">
                         <div>
@@ -32,8 +36,20 @@
                     </div>
                     </div>
                       </div>
+                      <div class="numeroprototipo">
+                        <div class="numero">
+                        <div>
+                        <label class="form-label">Quantidade</label>
+                    </div>
+                    <div>
+                        <input id="prot" name="quantity" [(ngModel)]="contract.quantity" type="number">
+                    </div>
+                    </div>
+                      </div>
+                    </div>
                    <button type="button" (click)="enviar()">Enviar</button>
                    <button>Recusar</button>
+                   <button type="button" (click)="editar()">Editar</button>
                   </form>
             
             </div>

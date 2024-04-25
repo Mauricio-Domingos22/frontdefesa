@@ -25,6 +25,10 @@
     color: #fff;
     font-size: 14px;
  }
+ .navbar-toggler{
+  border: 1px solid #1976D2 !important;
+  background-color: rgba(0,0,0,.4);
+ }
  .list:hover{
     color: #1976D2;
  }

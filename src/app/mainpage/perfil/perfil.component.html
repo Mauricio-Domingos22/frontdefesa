@@ -13,13 +13,13 @@
                 <div class="user">
                     <div class="separatorInfo">
                         <img src="../../../assets/img/download (1).png">
-                        <button class="changePhoto">edit</button>
+                        <button class="changePhoto">Trocar foto</button>
                         <div class="nameProfission">
                             <h5>{{ nameUser }}</h5>
                             <h6>{{ specialitys }}</h6>
                             <div class="buttons">
                              <button>Enviar mensagem</button>
-                             <button><a [routerLink]="['/area_de_trabalho/contrato']">Solicitar serviço</a></button>
+                             <button><a [routerLink]="['/area_de_trabalho/']">Solicitar serviço</a></button>
                             </div>
                         </div>
                     </div>
@@ -55,18 +55,22 @@
             <div class="texto">
                 <div class="">
                     <div class="">
-                        <textarea name="description" class="form-control" rows="5"
+                        <textarea name="description" class="form-control" rows="3"
                         placeholder="Descreva sobre si..."></textarea>
                     </div>
                 </div>
             </div>
 
-            <div class="image-group">
-                <img src="../../../assets/img/n1.jpg" alt="Imagem 1">
-                <img src="../../../assets/img/n1.jpg" alt="Imagem 1">
-                <img src="../../../assets/img/n1.jpg" alt="Imagem 1">
-                <img src="../../../assets/img/n1.jpg" alt="Imagem 1">
-            </div>
+            <div class="arquivos">
+                <input type="file" multiple (change)="onFileSelected($event)" accept="image/*">
+                <button (click)="uploadImages()">Salvar</button>
+              </div>
+              
+              <div class="image-group" *ngIf="filesArray.length > 0">
+                <div *ngFor="let file of filesArray">
+                  <img [src]="getFileSrc(file)">
+                </div>
+              </div>
 
 
         </main>

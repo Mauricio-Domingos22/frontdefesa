@@ -14,10 +14,12 @@
           <div class="col-md-6">
             <label for="numberBI" class="form-label">Número de BI</label>
             <input type="text" class="form-control" name="binumber" [(ngModel)]="userComp.binumber" placeholder="Número de Bilhete de identidade" maxlength="14">
+            <p *ngIf="errorMessage && !userComp.binumber" class="error-message">{{ errorMessage }}</p>
           </div>
         <div class="col-md-6">
           <label for="phone" class="form-label">Nº de Telefone</label>
           <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="userComp.phone" placeholder="9XXXXXXXXX" maxlength="9">
+          <p *ngIf="errorMessage && !userComp.phone" class="error-message">{{ errorMessage }}</p>
         </div>
         <div class="col-md-6">
           <label for="userName" class="form-label">Área de actuaçao</label>
@@ -30,18 +32,22 @@
         <div class="col-md-6">
             <label for="nif" class="form-label">NIF</label>
             <input type="text" class="form-control" name="nif" [(ngModel)]="userComp.nif" placeholder="NIF da empresa" maxlength="10">
+            <p *ngIf="errorMessage && !userComp.nif" class="error-message">{{ errorMessage }}</p>
           </div>
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
             <input type="email" class="form-control" name="email" [(ngModel)]="userComp.email" placeholder="Digite o seu email">
+            <p *ngIf="errorMessage && !userComp.email" class="error-message">{{ errorMessage }}</p>
           </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Password</label>
             <input type="password" class="form-control" name="password" [(ngModel)]="userComp.password" placeholder="Digite a sua palavra-passe">
+            <p *ngIf="errorMessage && ! userComp.password" class="error-message">{{ errorMessage }}</p>
           </div>
           <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Confirmar palavra-passe</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Digite a sua palavra-passe">
+            <input type="password" class="form-control" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Digite a sua palavra-passe novamente">
+            <p *ngIf="errorMessage && !confirmPassword" class="error-message">{{ errorMessage }}</p>
           </div>
 
           <div class="col-md-3">
@@ -51,7 +57,11 @@
               <option *ngFor="let provincia of provincias" value="{{ provincia.id }}">{{ provincia.description }}</option>
             </select>
           </div>
-        
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">NIF em PDF</label>
+            <input type="file" class="form-control" accept=".pdf" name="arquivo" [(ngModel)]="userComp.arquivo"  placeholder="formato:PDF">
+            <p *ngIf="errorMessage && !confirmPassword" class="error-message">{{ errorMessage }}</p>
+          </div>
         <div class="col-12">
          <label for="">Genero:</label>
           <div class="form-check">

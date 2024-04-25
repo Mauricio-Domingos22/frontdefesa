@@ -35,7 +35,10 @@
   outline: none;
   border: none;
   }
-
+  .areaRegister p{
+    font-size: 10px;
+    color: red;
+  }
 
 
 @media screen and (max-width: 1200px){

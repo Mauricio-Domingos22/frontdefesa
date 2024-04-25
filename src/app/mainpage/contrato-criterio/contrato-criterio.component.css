@@ -6,14 +6,14 @@ body{
 
 .container{
     width: 60%;
+    background: #fff;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     margin-right: 200px;
-    border:1px solid rgba(0,0,0,.1) ;
+    border:1px solid rgba(0,0,0,.2) ;
     border-radius: 5px;
     padding: 20px;
-    background: #fff;
     margin-top: 20px;
     margin-bottom: 150px;
     
@@ -85,5 +85,13 @@ button:hover{
     justify-content: center;
     font-size: 12px;
     margin-top: 40px;
+}
+.numeros{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+p{
+    font-size: 13px;
 }
 

@@ -45,7 +45,21 @@ export class LoginComponent {
           this.router.navigateByUrl(`/area_de_trabalho/${this.navigateByUrl}`)
 
           alert('Seja Bem-Vindo')
-        } else {
+
+        } 
+        
+        else if (data.user.type_user === "Admin") {
+          this.navigateByUrl = 'admin_trabalho';
+          sessionStorage.setItem('sessionToken', data.token.token)
+          sessionStorage.setItem('currentUser', JSON.stringify(data.user));
+
+          this.userLogged = true
+
+          this.router.navigateByUrl(`/area_de_trabalho/${this.navigateByUrl}`)
+          alert('Seja Bem-Vindo')
+        }
+        
+        else{
 
           this.navigateByUrl = 'empresa_trabalho'
 
@@ -57,6 +71,9 @@ export class LoginComponent {
           this.router.navigateByUrl(`/area_de_trabalho/${this.navigateByUrl}`)
           alert('Seja Bem-Vindo')
         }
+      
+        
+        
       })
   }
 

@@ -8,26 +8,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./contrato-criterio.component.css']
 })
 export class ContratoCriterioComponent {
-descriptionServices: string = '';
+  descriptionServices: string = '';
+  empresaNome: string = '';
 
   contract = {
     value: null,
     term: null,
     number_prototype: null,
+    quantity: null
   }
 
   constructor(private http: HttpClient) {
 
   }
   ngOnInit(): void {
-    this.getInfoPessoalByUser();
+    this.getInfocontratoByUser();
   }
 
-  getInfoPessoalByUser(): void {
+  getInfocontratoByUser(): void {
     this.http.get<any>('http://127.0.0.1:3333/contrato',)
       .subscribe(
         (res: any) => {
-          this.descriptionServices = res.contract.descriptionService; 
+          this.descriptionServices = res.contrato.descriptionService;
+          this.empresaNome = res.username;
           console.log('Dados recebidos:', this.descriptionServices);
         },
         (error) => {
@@ -36,11 +39,18 @@ descriptionServices: string = '';
       );
   }
 
-  enviar(){
-    this.http.post('http://127.0.0.1:3333/contrato', this.contract)
+  enviar() {
+    this.http.post('http://127.0.0.1:3333/updatecontrato', this.contract)
       .subscribe(res => {
         alert('Proposta feita com sucesso');
-       })
+      })
+  }
+
+  editar() {
+    this.http.post('http://127.0.0.1:3333/updatecontrato', this.contract)
+      .subscribe(res => {
+        alert('Proposta feita com sucesso');
+      })
   }
 
 

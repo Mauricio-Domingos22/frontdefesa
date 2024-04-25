@@ -13,7 +13,10 @@ import { PublicationsComponent } from './publications/publications.component';
 import { ContractComponent } from './contract/contract.component';
 import { ShowcontractComponent } from './showcontract/showcontract.component';
 import { ContratoCriterioComponent } from './contrato-criterio/contrato-criterio.component';
-import { ShowPerfilComponent } from './show-perfil/show-perfil.component'
+import { ShowPerfilComponent } from './show-perfil/show-perfil.component';
+import { AdminworkComponent } from './adminwork/adminwork.component';
+import { RulesComponent } from './rules/rules.component';
+import { QueixaComponent } from './queixa/queixa.component'
 
 
 
@@ -28,7 +31,10 @@ import { ShowPerfilComponent } from './show-perfil/show-perfil.component'
     ContractComponent,
     ShowcontractComponent,
     ContratoCriterioComponent,
-    ShowPerfilComponent
+    ShowPerfilComponent,
+    AdminworkComponent,
+    RulesComponent,
+    QueixaComponent
   ],
   imports: [
     CommonModule,

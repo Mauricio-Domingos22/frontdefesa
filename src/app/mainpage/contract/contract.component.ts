@@ -8,7 +8,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContractComponent {
 
+  freelancerName: string = '';
+  valor: string = '';
+  quantidade!: number;
+  datadeentrega: string = '';
+  numeroprototipo!: number;
+
   contract = {
+    id_user_freelancer:null,
+    id_user_company:null,
     descriptionService:null,
   }
 
