@@ -42,12 +42,12 @@ export class BackofficeComponent {
     private http: HttpClient, private router: Router
 
   ) {
+    
     this.fileInput = new ElementRef(null);
+
     this.getProfissoes()
-    // this.getEspecialidade()
     this.getUserFreelancerPublications()
     this.GetEspecialidadesByProfissao()
-   
   }
 
   publicar() {
@@ -66,21 +66,15 @@ export class BackofficeComponent {
       });
   }
 
-      // getEspecialidade() {
-      //   this.http.get<any>('http://127.0.0.1:3333/especialidade')
-      //     .subscribe(res => {
-      //       this.especialidades = res.specialties;
-      //       console.log('Dados recebidos:', this.especialidades);
-      //     });
-      // }
-      GetEspecialidadesByProfissao() {
 
-        this.http.get<any>('http://127.0.0.1:3333/get-especialidad-by-profissao/' + this.profissaoSelecionada?.id)
-          .subscribe(res => {
-            this.especialidades = res;
-          });
-    
-      }
+  GetEspecialidadesByProfissao() {
+
+    this.http.get<any>('http://127.0.0.1:3333/get-especialidad-by-profissao/' + this.profissaoSelecionada?.id)
+      .subscribe(res => {
+        this.especialidades = res;
+      });
+
+  }
 
   getUserFreelancerPublications() {
 
