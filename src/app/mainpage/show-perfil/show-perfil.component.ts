@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { ShowPerfilService } from './show-perfil.service';
 
 @Component({
   selector: 'app-show-perfil',
@@ -16,10 +17,12 @@ export class ShowPerfilComponent {
 
   user_freelancer: any = []
   user_frelancer_id: any;
+  portfolios: any = []
 
   constructor(
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private showPerfilService: ShowPerfilService
   ) {
 
     this.headers = new HttpHeaders()
@@ -37,6 +40,15 @@ export class ShowPerfilComponent {
   ngOnInit(): void {
     this.getInfoPessoalByUser();
     this.getFreelancerPerfil()
+    this.getPortfolio()
+  }
+
+  getPortfolio() {
+
+    this.http.get('http://127.0.0.1:3333/list-portfolio', { headers: this.headers })
+      .subscribe(res => {
+        this.portfolios = res
+      })
   }
 
   getInfoPessoalByUser(): void {
@@ -59,5 +71,9 @@ export class ShowPerfilComponent {
 
         this.user_freelancer = response
       })
+  }
+
+  previewImage(filename: any) {
+    return this.showPerfilService.previewImage(filename)
   }
 }

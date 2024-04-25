@@ -60,11 +60,8 @@
                 </div>
             </div>
 
-            <div class="image-group">
-                <img src="../../../assets/img/n1.jpg" alt="Imagem 1">
-                <img src="../../../assets/img/n1.jpg" alt="Imagem 1">
-                <img src="../../../assets/img/n1.jpg" alt="Imagem 1">
-                <img src="../../../assets/img/n1.jpg" alt="Imagem 1">
+            <div class="image-group" *ngFor="let item of portfolios">
+                <img [src]="previewImage(item.filename)" alt="Imagem 1">
             </div>
 
 
