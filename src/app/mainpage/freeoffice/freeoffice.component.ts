@@ -39,8 +39,11 @@ export class FreeofficeComponent {
       })
   }
 
-  submeter() {
-    this.http.post('http://127.0.0.1:3333/submetido', this.submited)
+  submeter(item: any) {
+
+    this.submited.id_user_publications = item.id
+
+    this.http.post('http://127.0.0.1:3333/submetido', this.submited, { headers: this.headers })
       .subscribe(res => {
         if (Object(res).code == 200) {
           alert(Object(res).message)
