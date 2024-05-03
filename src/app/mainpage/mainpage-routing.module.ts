@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'freelance_trabalho', component:FreeofficeComponent},
   {path:'admin_trabalho', component:AdminworkComponent},
   {path:'perfil_usuario', component:PerfilComponent},
-  {path:'contrato', component:ContractComponent},
+  { path: 'contrato/:user_freelancer_id', component: ContractComponent},
   {path:'vercontrato', component:ShowcontractComponent},
   {path:'contratocriterios', component:ContratoCriterioComponent},
   {path:'mostrarperfil/:user_frelancer_id', component:ShowPerfilComponent},

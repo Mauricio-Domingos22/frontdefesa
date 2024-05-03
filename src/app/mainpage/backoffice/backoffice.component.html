@@ -90,7 +90,7 @@
                         <thead>
                             <tr>
                                 <th>Frelancer</th>
-                                <!--<th>Date de Submetida</th>-->
+                                <th>Data Submetida</th>
                                 <th>Visualizar</th>
                             </tr>
                         </thead>
@@ -100,7 +100,7 @@
                                     <img src="../../../assets/img/download (1).png">
                                     <p>{{ freelancer.user.fullname }}</p>
                                 </td>
-                                <!--<td>{{ item.date_submit }}</td>-->
+                                <td>{{ item.date_submit | date:'dd/MM/yyyy' }}</td>
                                 <td>
                                     <button type="button" class="viewPortifolio" (click)="verPerfilFreelancer(freelancer)">Portifólio</button>
                                 </td>
@@ -126,12 +126,12 @@
                 </div>
 
                 <!-- Reminders -->
-                <div class="reminders">
-                    <div class="header">
+                <!-- <div class="reminders">
+                    <div class="header"> -->
                         <!-- <i class='bx bx-note'></i> -->
-                        <h3>Contratos Efectuados</h3>
+                        <!-- <h3>Contratos Efectuados</h3> -->
 
-                    </div>
+                    <!-- </div>
                     <ul class="task-list">
                         <li class="completed">
                             <div class="task-title">
@@ -155,7 +155,7 @@
                             <i class='bx bx-dots-vertical-rounded'></i>
                         </li>
                     </ul>
-                </div>
+                </div> -->
                 <!-- End of Reminders-->
             </div>
 

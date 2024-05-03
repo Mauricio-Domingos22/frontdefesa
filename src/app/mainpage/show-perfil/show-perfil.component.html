@@ -13,13 +13,17 @@
                 <div class="user">
                     <div class="separatorInfo">
                         <img src="../../../assets/img/download (1).png">
-                        <button class="changePhoto">edit</button>
+                        <!-- <button class="changePhoto">edit</button> -->
                         <div class="nameProfission">
                              <h5>{{ user_freelancer.fullname }}</h5> 
                             <h6>{{ user_freelancer.especiality }}</h6> 
                             <div class="buttons">
-                             <button>Enviar mensagem</button>
-                             <button><a [routerLink]="['/area_de_trabalho/contrato']">Solicitar serviço</a></button>
+                            <button (click)="iniciarConversa()">Conversar no WhatsApp</button>
+
+                             <button type="button" class="solicitarServico" (click)="solicitarServico()">Solicitar serviço</button>
+
+
+
                             </div>
                         </div>
                     </div>
@@ -55,7 +59,7 @@
             <div class="texto">
                 <div class="">
                     <div class="">
-                        <p>.jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj</p>
+                        <p></p>
                     </div>
                 </div>
             </div>

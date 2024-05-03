@@ -47,6 +47,25 @@ export class ContratoCriterioComponent {
   }
 
   editar() {
+
+   // Verifica se this.contract.term não é null antes de criar o objeto Date
+  if (!this.contract.term) {
+    alert('Por favor, selecione uma data de entrega.');
+    return; 
+    // Impede o envio da solicitação se a data não estiver definida
+  }
+
+  // Verifica se a data de entrega é válida e está no futuro
+  const today = new Date();
+  const deliveryDate = new Date(this.contract.term);
+
+  if (deliveryDate < today) {
+    alert('Por favor, selecione uma data de entrega futura.');
+    return;
+     // Impede o envio da solicitação se a data não for válida
+  }
+
+
     this.http.post('http://127.0.0.1:3333/updatecontrato', this.contract)
       .subscribe(res => {
         alert('Proposta feita com sucesso');
